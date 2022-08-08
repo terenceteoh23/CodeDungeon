@@ -7,6 +7,7 @@ public class Player : MonoBehaviour
     private BoxCollider2D boxColider;
     private Vector3 moveDelta;
     private RaycastHit2D hit;
+    public float speed = 1f;
 
     private void Start()
     {
@@ -38,7 +39,7 @@ public class Player : MonoBehaviour
         if (hit.collider == null)
         {
             //make the player move
-            transform.Translate(0, moveDelta.y * Time.deltaTime, 0);
+            transform.Translate(0, moveDelta.y * speed * Time.deltaTime, 0);
         }
 
         //make sure we can move on the x axis
@@ -47,7 +48,7 @@ public class Player : MonoBehaviour
         if (hit.collider == null)
         {
             //make the player move
-            transform.Translate(moveDelta.x * Time.deltaTime, 0, 0);
+            transform.Translate(moveDelta.x * speed * Time.deltaTime, 0, 0);
         }
 
 
