@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public enum BattleState { START , PLAYERTURN, ENEMYTURN, VICTORY, DEFEAT }
 public class BattleManager : MonoBehaviour
@@ -14,8 +15,15 @@ public class BattleManager : MonoBehaviour
     public Transform enemyPosition;
 
     //character stats
-    private  CharacterStats playerStats;
-    private  CharacterStats enemyStats;
+    private CharacterInfo playerUnit;
+    private CharacterInfo enemyUnit;
+
+    //battle UI
+    public Text battleDialog;
+
+    //battleHUD
+    public PlayerBattleHUD playerHUD;
+    public EnemyBattleHUD enemyHUD;
 
     //battle states
     public BattleState state;
@@ -30,10 +38,15 @@ public class BattleManager : MonoBehaviour
     private void SetupBattle()
     {
         GameObject player =  Instantiate(playerPrefab, playerPosition);
-        playerStats = player.GetComponent<CharacterStats>();
+        playerUnit = player.GetComponent<CharacterInfo>();
 
         GameObject enemy = Instantiate(enemyPrefab, enemyPosition);
-        enemyStats = enemy.GetComponent<CharacterStats>();
+        enemyUnit = enemy.GetComponent<CharacterInfo>();
+
+        battleDialog.text = "You have encountered a " + enemyUnit.Cname + ".";
+
+        playerHUD.SetHUD(playerUnit);
+        enemyHUD.SetHUD(enemyUnit);
 
         state = BattleState.PLAYERTURN;
     }

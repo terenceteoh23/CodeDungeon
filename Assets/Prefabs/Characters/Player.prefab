@@ -138,8 +138,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a0db0869b33a874b91e2ad60e989904, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Cname: 
-  level: 0
-  damage: 0
-  maxHP: 0
-  currentHP: 0
+  Cname: Player
+  level: 1
+  damage: 5
+  maxHP: 15
+  currentHP: 10

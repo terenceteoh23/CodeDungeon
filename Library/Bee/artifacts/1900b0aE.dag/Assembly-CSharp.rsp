@@ -362,14 +362,16 @@
 -r:"Library/Bee/artifacts/1900b0aE.dag/UnityEngine.UI.ref.dll"
 "Assets/Scripts/BattleManager.cs"
 "Assets/Scripts/CameraMotor.cs"
-"Assets/Scripts/CharacterStats.cs"
+"Assets/Scripts/CharacterInfo.cs"
 "Assets/Scripts/Chest.cs"
 "Assets/Scripts/Collectable.cs"
 "Assets/Scripts/Colliable.cs"
+"Assets/Scripts/EnemyBattleHUD.cs"
 "Assets/Scripts/FloatingText.cs"
 "Assets/Scripts/FloatingTextManager.cs"
 "Assets/Scripts/GameManager.cs"
 "Assets/Scripts/Player.cs"
+"Assets/Scripts/PlayerBattleHUD.cs"
 "Assets/Scripts/Portal.cs"
 -langversion:9.0
 
