@@ -18,5 +18,6 @@ public class PlayerBattleHUD : MonoBehaviour
     public void SetHp(int hp)
     {
         hpSlider.value = hp;
+        hpText.text = "HP: " + hpSlider.value + "/" + hpSlider.maxValue;
     }
 }       

@@ -696,7 +696,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 553944785}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1701888677}
+        m_TargetAssemblyTypeName: BattleManager, Assembly-CSharp
+        m_MethodName: HealAction
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &553944785
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3527,7 +3539,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 683600059}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1701888677}
+        m_TargetAssemblyTypeName: BattleManager, Assembly-CSharp
+        m_MethodName: AttackAction
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &683600059
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6181,6 +6205,8 @@ MonoBehaviour:
   battleDialog: {fileID: 545978178}
   playerHUD: {fileID: 1871988273}
   enemyHUD: {fileID: 715591225}
+  AttackButton: {fileID: 683600058}
+  HealButton: {fileID: 553944784}
   state: 0
 --- !u!4 &1701888678
 Transform:
