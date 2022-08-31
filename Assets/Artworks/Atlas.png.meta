@@ -1288,7 +1288,7 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1309,7 +1309,7 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1317,6 +1317,111 @@ TextureImporter:
       bones: []
       spriteID: 098921c6dc251554d8af53ca52858de5
       internalID: -940709823
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemy_3
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 96
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 997a16a5776429e4e9b48a1b5d85d2df
+      internalID: -1670627375
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shade_0
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 128
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 826c24a65b838ff44844ec6111d9ba03
+      internalID: -487866008
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shade_1
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 128
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aba4b79b8f5b52b4ca3ef1b6cf8ba1b3
+      internalID: 988053290
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shade_3
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 112
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ecd7e0ce1b84d2741b5cf52595fbb181
+      internalID: -1697255045
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shade_4
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 112
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1077c16a4ca584a47a4f451ddaba6934
+      internalID: 194529991
       vertices: []
       indices: 
       edges: []
@@ -1338,8 +1443,10 @@ TextureImporter:
       wall_0: -6721728136321296765
       torch_0: -1938258962
       stairs_1: -320008725
+      enemy_3: -1670627375
       floor_7: 740105927
       wall_1: -1425046233
+      shade_4: 194529991
       sword_0: -1909438315
       floor_5: -1647032801
       torch_2: 1633183410
@@ -1353,6 +1460,7 @@ TextureImporter:
       floor_14: 1075748543
       torch_6: 546165699
       crate_2: 1418176153
+      shade_3: -1697255045
       torch_3: 106889172
       crate_3: -940709823
       wall_8: 2078511469
@@ -1369,6 +1477,7 @@ TextureImporter:
       floor_0: -7826287199498012479
       player_1: -4869357254534750094
       enemy_1: 1599771880
+      shade_1: 988053290
       chest_3: 1378418346
       wall_2: 1575532639
       wall_6: -1968273914
@@ -1389,6 +1498,7 @@ TextureImporter:
       stairs_3: 512760648
       pillar_0: 1652476209
       wall_7: -1405342330
+      shade_0: -487866008
       crate_1: 1382623116
       chest_2: -708538502
   spritePackingTag: 

@@ -31,7 +31,6 @@ public class BattleManager : MonoBehaviour
     public BattleState state;
 
 
-
     private void Start()
     {
         state = BattleState.START;
@@ -42,7 +41,7 @@ public class BattleManager : MonoBehaviour
     private IEnumerator SetupBattle()
     {
         //create the game objects for player and the enemies
-        GameObject player =  Instantiate(playerPrefab, playerPosition);
+        GameObject player = Instantiate(playerPrefab, playerPosition);
         playerUnit = player.GetComponent<CharacterInfo>();
 
         GameObject enemy = Instantiate(enemyPrefab, enemyPosition);

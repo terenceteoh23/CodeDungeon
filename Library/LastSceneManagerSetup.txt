@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/Scenes/BattleScene.unity
+- path: Assets/Scenes/Puzzle_DND/Puzzle_DND_1.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0
