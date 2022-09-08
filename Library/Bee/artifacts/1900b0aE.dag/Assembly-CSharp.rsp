@@ -368,13 +368,15 @@
 "Assets/Scripts/Colliable.cs"
 "Assets/Scripts/DragAndDropSystem.cs"
 "Assets/Scripts/EnemyBattleHUD.cs"
+"Assets/Scripts/EnemyUnit.cs"
 "Assets/Scripts/FloatingText.cs"
 "Assets/Scripts/FloatingTextManager.cs"
 "Assets/Scripts/GameManager.cs"
 "Assets/Scripts/Player.cs"
 "Assets/Scripts/PlayerBattleHUD.cs"
 "Assets/Scripts/Portal.cs"
-"Assets/Scripts/PuzzleManager.cs"
+"Assets/Scripts/PuzzleManagerMCQ.cs"
+"Assets/Scripts/PuzzleMangerDND.cs"
 "Assets/Scripts/PuzzleMCQ.cs"
 -langversion:9.0
 

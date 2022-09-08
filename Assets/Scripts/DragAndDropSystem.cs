@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class DragAndDropSystem : MonoBehaviour
 {
-    public GameObject correctForm;
+    public GameObject AnswerSlot1;
+    public GameObject AnswerSlot2;
+
     private bool moving;
 
     private float startPosX;
@@ -14,8 +16,9 @@ public class DragAndDropSystem : MonoBehaviour
 
     public void Start()
     {
-        resetPosition = this.transform.localPosition;
+        resetPosition = this.transform.position;
     }
+
     public void Update()
     {
         if (moving)
@@ -25,7 +28,7 @@ public class DragAndDropSystem : MonoBehaviour
             mousePos = Input.mousePosition;
             mousePos = Camera.main.ScreenToWorldPoint(mousePos);
 
-            this.gameObject.transform.localPosition = new Vector3(mousePos.x - startPosX, mousePos.y - startPosY, this.gameObject.transform.localPosition.z);
+            this.gameObject.transform.position = new Vector3(mousePos.x - startPosX, mousePos.y - startPosY, this.gameObject.transform.position.z);
         }
     }
 
@@ -38,8 +41,8 @@ public class DragAndDropSystem : MonoBehaviour
             mousePos = Input.mousePosition;
             mousePos = Camera.main.ScreenToWorldPoint(mousePos);
 
-            startPosX = mousePos.x - this.transform.localPosition.x;
-            startPosY = mousePos.y - this.transform.localPosition.y;
+            startPosX = mousePos.x - this.transform.position.x;
+            startPosY = mousePos.y - this.transform.position.y;
 
             moving = true;
         }
@@ -48,14 +51,21 @@ public class DragAndDropSystem : MonoBehaviour
     public void OnMouseUp()
     {
         moving = false;
-        if(Mathf.Abs(this.transform.localPosition.x - correctForm.transform.localPosition.x) <= 0.5f && (this.transform.localPosition.y - correctForm.transform.localPosition.y ) <= 0.5f)
+
+        if(Mathf.Abs(this.transform.position.x - AnswerSlot1.transform.position.x) <= 0.01f && (this.transform.position.y - AnswerSlot1.transform.position.y ) <= 0.01f)
         {
-            this.transform.localPosition = correctForm.transform.localPosition;
-            //this.transform.localPosition = new Vector3(correctForm.transform.localPosition.x, correctForm.transform.localPosition.y, correctForm.transform.localPosition.z);
+            this.transform.position = AnswerSlot1.transform.position;
         }
         else
         {
-            this.transform.localPosition = resetPosition;
+            if (Mathf.Abs(this.transform.position.x - AnswerSlot2.transform.position.x) <= 0.01f && (this.transform.position.y - AnswerSlot2.transform.position.y) <= 0.01f)
+            {
+                this.transform.position = AnswerSlot2.transform.position;
+            }
+            else
+            {
+                this.transform.position = resetPosition;
+            }
         }
     }
 

@@ -61,17 +61,19 @@
     <Compile Include="Assets\Scripts\BattleManager.cs" />
     <Compile Include="Assets\Scripts\CameraMotor.cs" />
     <Compile Include="Assets\Scripts\CharacterInfo.cs" />
+    <Compile Include="Assets\Scripts\DragAndDropSystem.cs" />
     <Compile Include="Assets\Scripts\Portal.cs" />
     <Compile Include="Assets\Scripts\EnemyBattleHUD.cs" />
     <Compile Include="Assets\Scripts\PlayerBattleHUD.cs" />
     <Compile Include="Assets\Scripts\FloatingTextManager.cs" />
     <Compile Include="Assets\Scripts\Chest.cs" />
     <Compile Include="Assets\Scripts\Colliable.cs" />
-    <Compile Include="Assets\Scripts\PuzzleManager.cs" />
+    <Compile Include="Assets\Scripts\PuzzleManagerMCQ.cs" />
     <Compile Include="Assets\Scripts\Player.cs" />
+    <Compile Include="Assets\Scripts\PuzzleMangerDND.cs" />
     <Compile Include="Assets\Scripts\FloatingText.cs" />
     <Compile Include="Assets\Scripts\GameManager.cs" />
-    <Compile Include="Assets\Scripts\DragAndDropSystem.cs" />
+    <Compile Include="Assets\Scripts\EnemyUnit.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
