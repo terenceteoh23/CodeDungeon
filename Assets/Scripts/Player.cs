@@ -1,57 +1,74 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
-public class Player : MonoBehaviour
+public class Player : CharacterInfo
 {
-    private BoxCollider2D boxColider;
-    private Vector3 moveDelta;
-    private RaycastHit2D hit;
-    public float speed = 1f;
+    public int knowledge;
 
-    private void Start()
+    public bool changedScene;
+    public string lastScene;
+    public float lastCordX;
+    public float lastCordY;
+
+
+    public void ChangeStats(int level, int damage, int maxHP, int currentHP, int knowledge)
     {
-        boxColider = GetComponent<BoxCollider2D>();
+        this.level += level;
+        this.damage += damage;
+        this.maxHP += maxHP;
+        this.currentHP += currentHP;
+        this.knowledge += knowledge;
     }
 
-    private void FixedUpdate()
+    public void SetStats(Player player)
     {
-
-        float x = Input.GetAxisRaw("Horizontal");
-        float y = Input.GetAxisRaw("Vertical");
-
-        //Reset the move delta
-        moveDelta = new Vector3(x, y, 0);
-
-        //swap sprite direction
-        if(moveDelta.x > 0)
-        {
-            transform.localScale = Vector3.one;
-        }
-        else if(moveDelta.x < 0)
-        {
-            transform.localScale = new Vector3(-1, 1, 0);
-        }
-
-        //make sure we can move on the y axis
-        hit = Physics2D.BoxCast(transform.position, boxColider.size, 0, new Vector2(0, moveDelta.y), Mathf.Abs(moveDelta.y * Time.deltaTime), LayerMask.GetMask("Character", "Blocking"));
-
-        if (hit.collider == null)
-        {
-            //make the player move
-            transform.Translate(0, moveDelta.y * speed * Time.deltaTime, 0);
-        }
-
-        //make sure we can move on the x axis
-        hit = Physics2D.BoxCast(transform.position, boxColider.size, 0, new Vector2(moveDelta.x, 0), Mathf.Abs(moveDelta.x * Time.deltaTime), LayerMask.GetMask("Character", "Blocking"));
-
-        if (hit.collider == null)
-        {
-            //make the player move
-            transform.Translate(moveDelta.x * speed * Time.deltaTime, 0, 0);
-        }
-
-
+        this.level = player.level;
+        this.damage = player.damage;
+        this.maxHP = player.maxHP;
+        this.currentHP = player.currentHP;
+        this.knowledge = player.knowledge;
     }
 
+    public void SaveLocation(string lastScene, float lastCordX, float lastCordY)
+    {
+        this.lastScene = lastScene;
+        this.lastCordX = lastCordX;
+        this.lastCordY = lastCordY;
+        changedScene = true;
+    }
+
+    /*public void SaveState()
+    {
+        string s = "";
+
+        s += Cname + "|";
+        s += level.ToString() + "|";
+        s += damage.ToString() + "|";
+        s += maxHP.ToString() + "|";
+        s += currentHP.ToString() + "|";
+        s += knowledge.ToString();
+
+        PlayerPrefs.SetString("SaveState", s);
+    }
+
+    public void LoadState()
+    {
+        if (!PlayerPrefs.HasKey("SaveState"))
+        {
+
+            return;
+        }
+
+        string[] data = PlayerPrefs.GetString("SaveState").Split('|');
+
+        Cname = data[0];
+        level = int.Parse(data[1]);
+        damage = int.Parse(data[2]);
+        maxHP = int.Parse(data[3]);
+        currentHP = int.Parse(data[4]);
+        knowledge = int.Parse(data[5]);
+
+    }*/
 }

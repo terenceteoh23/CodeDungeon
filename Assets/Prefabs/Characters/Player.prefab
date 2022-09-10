@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 4830491747708126290}
   - component: {fileID: 4830491747708126291}
   - component: {fileID: 4830491747708126293}
-  - component: {fileID: 4830491747708126292}
-  - component: {fileID: -2332104969827043195}
+  - component: {fileID: 6414328792111074370}
+  - component: {fileID: -7506425661042637148}
   m_Layer: 8
   m_Name: Player
   m_TagString: Untagged
@@ -113,7 +113,20 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.12146127, y: 0.15225667}
   m_EdgeRadius: 0
---- !u!114 &4830491747708126292
+--- !u!114 &6414328792111074370
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4830491747708126294}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 638e3ba95ac114e4fbdf68672d4eb88c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 1
+--- !u!114 &-7506425661042637148
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -125,21 +138,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61a4ef1350166194e96c358847ec755d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1
---- !u!114 &-2332104969827043195
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4830491747708126294}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6a0db0869b33a874b91e2ad60e989904, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
   Cname: Player
   level: 1
-  damage: 5
-  maxHP: 15
-  currentHP: 10
+  damage: 3
+  maxHP: 42
+  currentHP: 33
+  knowledge: 1
+  changedScene: 0
+  lastScene: Main
+  lastCordX: 0
+  lastCordY: 0

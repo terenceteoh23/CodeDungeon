@@ -14,6 +14,7 @@ public class GameManager : MonoBehaviour
         }
 
         instance = this;
+    
         SceneManager.sceneLoaded += LoadState;
         DontDestroyOnLoad(gameObject);
     }
@@ -25,45 +26,47 @@ public class GameManager : MonoBehaviour
     public List<int> xpTable;
 
     //References
+    public GameObject playerUnit;
+    public GameObject playerUnitField;
+
     public Player player;
 
     public FloatingTextManager floatingTextManager;
-
-    public int pesos;
-    public int exp;
 
     public void ShowText(string msg, int fontSize, Color color, Vector3 position, Vector3 motion, float duration)
     {
         floatingTextManager.Show(msg, fontSize, color, position, motion, duration);
     }
 
+    public void ChangePlayerStats(int level, int damage, int maxhp, int currenthp, int knowledge)
+    {
+        player.ChangeStats(level, damage, maxhp, currenthp, knowledge);
+    }
+
+    public void SavePlayerLocation()
+    {
+        Scene scene = SceneManager.GetActiveScene();
+        string sceneName = scene.name;
+
+        float cordX = playerUnitField.transform.localPosition.x;
+        float cordY = playerUnitField.transform.localPosition.y;
+
+        player.SaveLocation(sceneName, cordX, cordY);
+    }
+
+    public void ChangeScene(string sceneName)
+    {
+        SceneManager.LoadScene(sceneName);
+    }
+
     //save and load state
     public void SaveState()
     {
-        string s = "";
 
-        s += "0" + "|";
-        s += pesos.ToString() + "|";
-        s += exp.ToString() + "|";
-        s += "0";
-
-        PlayerPrefs.SetString("SaveState", s);
     }
 
     public void LoadState(Scene s, LoadSceneMode mode)
     {
-        if (!PlayerPrefs.HasKey("SaveState")){
-
-            return;
-        }
-
-         string[] data = PlayerPrefs.GetString("SaveState").Split('|');
-
-         pesos = int.Parse(data[1]);
-         exp = int.Parse(data[2]);
-
-         Debug.Log("Load State");
         
-
     }
 }
