@@ -8,15 +8,52 @@ public class GameManager : MonoBehaviour
     public static GameManager instance;
     private void Awake()
     {
-        if(GameManager.instance != null)
+        if (instance == null)
         {
-            return;
+            //First run, set the instance
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+
+        }
+        else if (instance != this)
+        {
+            //Instance is not the same as the one we have, destroy old one, and reset to newest one
+            Destroy(instance.gameObject);
+            instance = this;
+            DontDestroyOnLoad(gameObject);
         }
 
-        instance = this;
-    
         SceneManager.sceneLoaded += LoadState;
-        DontDestroyOnLoad(gameObject);
+
+        playerFieldData = playerData;
+
+        if (playerFieldData.isStarting == true)
+        {
+            playerUnitField.transform.position = startingPos.position;
+            playerFieldData.isStarting = false;
+            Debug.Log("STARTING");
+        }
+        else
+        {
+            Vector3 tempPos = playerFieldData.GetLocation();
+            playerUnitField.transform.position = tempPos;
+            Debug.Log("NOT STARTING");
+        }
+            
+
+        /*//create a clone of the prefab
+        if (player.isStarting == true)
+        {
+            playerUnitField = Instantiate(playerUnit, startingPos);
+            player.isStarting = false;
+            Debug.Log("STARTING");
+        }
+        else
+        {
+            Vector3 tempPos = player.GetLocation();
+            playerUnitField = Instantiate(playerUnit, tempPos, new Quaternion(0,0,0,0));
+            Debug.Log("NOT STARTING");
+        }*/
     }
 
     //Resources
@@ -29,7 +66,13 @@ public class GameManager : MonoBehaviour
     public GameObject playerUnit;
     public GameObject playerUnitField;
 
-    public Player player;
+    public EnvironmentManager environmentManager;
+
+    public Transform startingPos;
+    //public bool starting;
+
+    public Player playerData;
+    public Player playerFieldData;
 
     public FloatingTextManager floatingTextManager;
 
@@ -40,7 +83,8 @@ public class GameManager : MonoBehaviour
 
     public void ChangePlayerStats(int level, int damage, int maxhp, int currenthp, int knowledge)
     {
-        player.ChangeStats(level, damage, maxhp, currenthp, knowledge);
+        playerData.ChangeStats(level, damage, maxhp, currenthp, knowledge);
+        playerFieldData.UpdateStats(playerData.GetPlayer());
     }
 
     public void SavePlayerLocation()
@@ -51,7 +95,7 @@ public class GameManager : MonoBehaviour
         float cordX = playerUnitField.transform.localPosition.x;
         float cordY = playerUnitField.transform.localPosition.y;
 
-        player.SaveLocation(sceneName, cordX, cordY);
+        playerData.SaveLocation(sceneName, cordX, cordY);
     }
 
     public void ChangeScene(string sceneName)

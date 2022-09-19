@@ -5,13 +5,28 @@ using UnityEngine.SceneManagement;
 
 public class Player : CharacterInfo
 {
+    //string Cname
+    //int level
+    //int damage
+    //int maxhp
+    //int currenthp
+
     public int knowledge;
 
+    public bool isStarting;
     public bool changedScene;
     public string lastScene;
     public float lastCordX;
     public float lastCordY;
 
+    public void UpdateStats(Player player)
+    {
+        this.level = player.level;
+        this.damage = player.damage;
+        this.maxHP = player.maxHP;
+        this.currentHP = player.currentHP;
+        this.knowledge = player.knowledge;
+    }
 
     public void ChangeStats(int level, int damage, int maxHP, int currentHP, int knowledge)
     {
@@ -37,6 +52,16 @@ public class Player : CharacterInfo
         this.lastCordX = lastCordX;
         this.lastCordY = lastCordY;
         changedScene = true;
+    }
+
+    public Vector3 GetLocation()
+    {
+        return new Vector3(lastCordX, lastCordY, 0);
+    }
+
+    public Player GetPlayer()
+    {
+        return this;
     }
 
     /*public void SaveState()

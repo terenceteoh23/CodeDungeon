@@ -14,6 +14,11 @@ public class CharacterInfo : MonoBehaviour
     public int maxHP;
     public int currentHP;
     
+    public int Attack()
+    {
+        return damage;
+    }
+    
     public bool TakeDamage(int dmg)
     {
         currentHP -= dmg;

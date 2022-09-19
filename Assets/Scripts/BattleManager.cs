@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using System;
 
 public enum BattleState { START , PLAYERTURN, ENEMYTURN, VICTORY, DEFEAT }
 public class BattleManager : MonoBehaviour
@@ -18,14 +19,13 @@ public class BattleManager : MonoBehaviour
     private Player player;
     private CharacterInfo enemyUnit;
 
-    //battle UI
-    public Text battleDialog;
-
-    //battleHUD
-    public PlayerBattleHUD playerHUD;
-    public EnemyBattleHUD enemyHUD;
+    //battle hud
+    public BattleHUDManager battleHUD;
     public Button AttackButton;
     public Button HealButton;
+
+    //battle puzzle
+    public PuzzleManagerMCQ puzzleManagerMCQ;
 
     //battle states
     public BattleState state;
@@ -50,11 +50,10 @@ public class BattleManager : MonoBehaviour
         //disable certain scripts
         playerGO.GetComponent<PlayerMovement>().enabled = false;
 
-        battleDialog.text = "You have encountered a " + enemyUnit.Cname + ".";
+        battleHUD.UpdateBattleDialog("You have encountered a " + enemyUnit.Cname + ".");
 
         //setup the hud for both player and enemy
-        playerHUD.SetHUD(player);
-        enemyHUD.SetHUD(enemyUnit);
+        battleHUD.BattleSetup(player, enemyUnit);
 
         //wait for 2 seconds
         yield return new WaitForSeconds(2f);
@@ -71,13 +70,14 @@ public class BattleManager : MonoBehaviour
         AttackButton.interactable = true;
         HealButton.interactable = true;
 
-        battleDialog.text = "Your Turn.";
+        //change battle dialog
+        battleHUD.UpdateBattleDialog("Your Turn.");
     }
 
     private IEnumerator EnemyTurn()
     {
         //change battle dialog
-        battleDialog.text = "Enemy Turn.";
+        battleHUD.UpdateBattleDialog("Enemy Turn.");
 
         //wait for 1 second
         yield return new WaitForSeconds(1f);
@@ -86,10 +86,10 @@ public class BattleManager : MonoBehaviour
         bool isDead = player.TakeDamage(enemyUnit.damage);
 
         //set player hud to reflect damage taken
-        playerHUD.SetHp(player.currentHP);
+        battleHUD.playerHUD.SetHp(player.currentHP);
 
         //change battle text to inform player 
-        battleDialog.text = enemyUnit.Cname + " dealt " + enemyUnit.damage + " to you!";
+        battleHUD.UpdateBattleDialog(enemyUnit.Cname + " dealt " + enemyUnit.damage + " to you!");
 
         //wait for 1 second
         yield return new WaitForSeconds(2f);
@@ -116,14 +116,28 @@ public class BattleManager : MonoBehaviour
         AttackButton.interactable = false;
         HealButton.interactable = false;
 
+        //wait for 2 seconds
+        yield return new WaitForSeconds(2f);
+        battleHUD.HideSecondBattleHUD();
+
         //attack enemy
-        bool isDead = enemyUnit.TakeDamage(player.damage);
+        int damage = player.Attack();
+
+        //cheeck if the player answered the question correctly
+        if (puzzleManagerMCQ.GetCorrect())
+        {
+            double db_damage = Convert.ToDouble(damage);
+            db_damage = db_damage * 1.25;
+            damage = Convert.ToInt32(db_damage);
+
+        }
+        bool isDead = enemyUnit.TakeDamage(damage);
 
         //set enemy hud to reflect damage delt
-        enemyHUD.SetHp(enemyUnit.currentHP);
+        battleHUD.enemyHUD.SetHp(enemyUnit.currentHP);
 
         //change battle text to inform player
-        battleDialog.text = "You dealt " + player.damage + " to " + enemyUnit.Cname + "!";
+        battleHUD.UpdateBattleDialog("You dealt " + damage + " to " + enemyUnit.Cname + "!");
 
         //wait for 2 seconds
         yield return new WaitForSeconds(2f);
@@ -144,6 +158,17 @@ public class BattleManager : MonoBehaviour
 
     }
 
+    public void OpenPuzzleAttack()
+    {
+        if (state != BattleState.PLAYERTURN)
+            return;
+        else
+        {
+            battleHUD.ShowSecondBattleHUD();
+        }
+
+    }
+
     private IEnumerator PlayerHeal()
     {
         //disable button
@@ -154,10 +179,10 @@ public class BattleManager : MonoBehaviour
         player.Heal();
 
         //set player hud to reflect healing
-        playerHUD.SetHp(player.currentHP);
+        battleHUD.playerHUD.SetHp(player.currentHP);
 
         //change battle dialog relfect healing
-        battleDialog.text = "You healed for 3 hp.";
+        battleHUD.UpdateBattleDialog("You healed for 3 hp.");
 
         //wait for 1 second
         yield return new WaitForSeconds(1f);
@@ -193,7 +218,7 @@ public class BattleManager : MonoBehaviour
     {
         if (state == BattleState.VICTORY)
         {
-            battleDialog.text = "VICTORY!!";
+            battleHUD.UpdateBattleDialog("VICTORY!!");
             Player player_1 = playerPrefab.GetComponent<Player>();
             player_1.SetStats(player);
 
@@ -202,7 +227,7 @@ public class BattleManager : MonoBehaviour
         }
             
         else if (state == BattleState.DEFEAT)
-            battleDialog.text = "You have been defeated......";
+            battleHUD.UpdateBattleDialog("You have been defeated......");
         
     }
 }

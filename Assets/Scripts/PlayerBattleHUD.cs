@@ -12,12 +12,12 @@ public class PlayerBattleHUD : MonoBehaviour
     {
         hpSlider.maxValue = info.maxHP;
         hpSlider.value = info.currentHP;
-        hpText.text = "HP: " + hpSlider.value + "/" + hpSlider.maxValue; 
+        hpText.text = hpSlider.value + "/" + hpSlider.maxValue; 
     }
 
     public void SetHp(int hp)
     {
         hpSlider.value = hp;
-        hpText.text = "HP: " + hpSlider.value + "/" + hpSlider.maxValue;
+        hpText.text = hpSlider.value + "/" + hpSlider.maxValue;
     }
 }       

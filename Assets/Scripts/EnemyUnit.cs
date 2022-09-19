@@ -8,13 +8,9 @@ public class EnemyUnit : Colliable
 
     protected override void OnCollide(Collider2D coll)
     {
-        if (coll.name == "Player(field)")
-        {
-
             GameManager.instance.SaveState();
             GameManager.instance.SavePlayerLocation();
             //Teleport the player
             GameManager.instance.ChangeScene(battleScene);
-        }
     }
 }

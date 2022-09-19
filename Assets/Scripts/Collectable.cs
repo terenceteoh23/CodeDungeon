@@ -8,10 +8,7 @@ public class Collectable : Colliable
 
     protected override void OnCollide(Collider2D coll)
     {
-        if(coll.name == "Player(field)")
-        {
-            OnCollect();
-        }
+        OnCollect();
     }
 
     protected virtual void OnCollect()

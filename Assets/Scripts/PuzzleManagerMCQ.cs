@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class PuzzleManagerMCQ : MonoBehaviour
 {
+    //elements for the UI
     public Button Choice1;
     public Text Choice1_Text;
     public Button Choice2;
@@ -15,13 +16,23 @@ public class PuzzleManagerMCQ : MonoBehaviour
     public Text Choice4_Text;
     public Text QuestionPrompt;
     public Text CorrectIndicator;
-    public string CorrectAnswer;
+    private string CorrectAnswer;
 
-    public PuzzleMCQ Puzzle;
+    private PuzzleMCQ Puzzle;
+    public PuzzleMCQRepository Repository;
+    private bool correct;
 
-    public void Start()
+    public void StartPuzzle()
     {
+        Puzzle = Repository.GetRandomPuzzleMCQ();
         SetupPuzzle(Puzzle);
+        CorrectAnswer = Puzzle.CorrectAnswer;
+        correct = false;
+    }
+
+    public bool GetCorrect()
+    {
+        return correct;
     }
 
     public void SetupPuzzle(PuzzleMCQ puzzle)
@@ -37,36 +48,40 @@ public class PuzzleManagerMCQ : MonoBehaviour
         CorrectIndicator.text = "";
     }
 
-    public void Check_Answer(string ans)
+    public IEnumerator Check_Answer(string ans)
     {
         if(string.Equals(ans, CorrectAnswer))
         {
             CorrectIndicator.text = "Correct!";
+            correct = true;
+            yield return new WaitForSeconds(2f);
         }
         else
         {
             CorrectIndicator.text = "Wrong....";
+            correct = false;
+            yield return new WaitForSeconds(2f);
         }
     }
 
     public void Choice1_Selected()
     {
-        Check_Answer(Choice1_Text.text);
+        StartCoroutine(Check_Answer(Choice1_Text.text));
     }
 
     public void Choice2_Selected()
     {
-        Check_Answer(Choice2_Text.text);
+        StartCoroutine(Check_Answer(Choice2_Text.text));
     }
 
     public void Choice3_Selected()
     {
-        Check_Answer(Choice3_Text.text);
+        StartCoroutine(Check_Answer(Choice3_Text.text));
     }
 
     public void Choice4_Selected()
     {
-        Check_Answer(Choice4_Text.text);
+        StartCoroutine(Check_Answer(Choice4_Text.text));
     }
 }
 
