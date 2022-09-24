@@ -9,7 +9,7 @@ public class EnemyUnit : Colliable
     protected override void OnCollide(Collider2D coll)
     {
             GameManager.instance.SaveState();
-            GameManager.instance.SavePlayerLocation();
+            EnvironmentManager.instance.SavePlayerLocation();
             //Teleport the player
             GameManager.instance.ChangeScene(battleScene);
     }

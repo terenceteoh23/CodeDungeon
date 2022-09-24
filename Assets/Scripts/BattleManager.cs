@@ -16,7 +16,7 @@ public class BattleManager : MonoBehaviour
     public Transform enemyPosition;
 
     //character stats
-    private Player player;
+    private Player player; 
     private CharacterInfo enemyUnit;
 
     //battle hud

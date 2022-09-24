@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class CameraMotor : MonoBehaviour
 {
-    // Start is called before the first frame update
     public Transform lookAT;
     public float boundX = 0.3f;
     public float boundY = 0.15f;
