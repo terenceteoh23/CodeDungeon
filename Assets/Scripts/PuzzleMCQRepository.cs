@@ -15,17 +15,14 @@ public class PuzzleMCQRepository : MonoBehaviour
     {
         PuzzleMCQ puzzle;
 
-        /*if (puzzles.Count == 1)
+        if (puzzles.Count == 1)
         {
             puzzle = puzzles[0];
         }
         else
         {
             puzzle = puzzles[Random.Range(0, puzzles.Count - 1)];
-        }*/
-
-        puzzle = puzzles[0];
-        
+        }
 
         return puzzle;
     }
@@ -35,10 +32,14 @@ public class PuzzleMCQRepository : MonoBehaviour
         puzzles.Add(new PuzzleMCQ(
             "what is does the data type int contain",
             "10", 
-            "\"attack\"", 
-            "\'B\'", 
-            "10", 
-            "145.34"));
+            "\"attack\"",
+            "Wrong, This is a string not an int",
+            "\'B\'",
+            "Wrong, This is a char not an int",
+            "10",
+            "Correct!!",
+            "145.34",
+            "Wrong, This is a float not an int"));
 
     }
 

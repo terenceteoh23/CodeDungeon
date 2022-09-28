@@ -37,6 +37,7 @@ public class PuzzleManagerMCQ : MonoBehaviour
 
     public void SetupPuzzle(PuzzleMCQ puzzle)
     {
+        buttonControl(true);
         Choice1_Text.text = puzzle.Answer_1;
         Choice2_Text.text = puzzle.Answer_2;
         Choice3_Text.text = puzzle.Answer_3;
@@ -48,40 +49,55 @@ public class PuzzleManagerMCQ : MonoBehaviour
         CorrectIndicator.text = "";
     }
 
-    public IEnumerator Check_Answer(string ans)
+    public IEnumerator Check_Answer(string ans, string exp)
     {
         if(string.Equals(ans, CorrectAnswer))
         {
-            CorrectIndicator.text = "Correct!";
+            //CorrectIndicator.text = "Correct!";
             correct = true;
-            yield return new WaitForSeconds(2f);
         }
         else
         {
-            CorrectIndicator.text = "Wrong....";
+            //CorrectIndicator.text = "Wrong....";
             correct = false;
-            yield return new WaitForSeconds(2f);
+            
         }
+
+        CorrectIndicator.text = exp;
+
+        yield return new WaitForSeconds(2f);
+    }
+
+    public void buttonControl(bool control)
+    {
+        Choice1.interactable = control;
+        Choice2.interactable = control;
+        Choice3.interactable = control;
+        Choice4.interactable = control;
     }
 
     public void Choice1_Selected()
     {
-        StartCoroutine(Check_Answer(Choice1_Text.text));
+        buttonControl(false);
+        StartCoroutine(Check_Answer(Choice1_Text.text, Puzzle.Explain_1));
     }
 
     public void Choice2_Selected()
     {
-        StartCoroutine(Check_Answer(Choice2_Text.text));
+        buttonControl(false);
+        StartCoroutine(Check_Answer(Choice2_Text.text, Puzzle.Explain_2));
     }
 
     public void Choice3_Selected()
     {
-        StartCoroutine(Check_Answer(Choice3_Text.text));
+        buttonControl(false);
+        StartCoroutine(Check_Answer(Choice3_Text.text, Puzzle.Explain_3));
     }
 
     public void Choice4_Selected()
     {
-        StartCoroutine(Check_Answer(Choice4_Text.text));
+        buttonControl(false);
+        StartCoroutine(Check_Answer(Choice4_Text.text, Puzzle.Explain_4));
     }
 }
 

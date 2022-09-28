@@ -11,6 +11,7 @@ public class EnvironmentManager : MonoBehaviour
     //public GameObject playerUnit;
     public GameObject playerUnitField;
     public Player player;
+    public List<Chest> openedChests;
 
     //map references
     public Transform startingPos;
@@ -43,6 +44,11 @@ public class EnvironmentManager : MonoBehaviour
         {
             Vector3 tempPos = player.GetLocation();
             playerUnitField.transform.position = tempPos;
+        }
+
+        foreach(Chest chest in openedChests)
+        {
+            chest.setCollected(true);
         }
 
         //cameraMotor.lookAT = playerUnit.transform;

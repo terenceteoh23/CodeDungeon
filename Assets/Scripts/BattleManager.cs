@@ -131,6 +131,7 @@ public class BattleManager : MonoBehaviour
             damage = Convert.ToInt32(db_damage);
 
         }
+
         bool isDead = enemyUnit.TakeDamage(damage);
 
         //set enemy hud to reflect damage delt
@@ -194,6 +195,7 @@ public class BattleManager : MonoBehaviour
 
     public void AttackAction()
     {
+        //execute attack 
         if(state != BattleState.PLAYERTURN)
             return;
         else
@@ -227,8 +229,10 @@ public class BattleManager : MonoBehaviour
         }
             
         else if (state == BattleState.DEFEAT)
+        {
             battleHUD.UpdateBattleDialog("You have been defeated......");
-        
+        }
+            
     }
 }
 
