@@ -116,8 +116,8 @@ public class BattleManager : MonoBehaviour
         AttackButton.interactable = false;
         HealButton.interactable = false;
 
-        //wait for 2 seconds
-        yield return new WaitForSeconds(2f);
+        //wait for 3 seconds
+        yield return new WaitForSeconds(3f);
         battleHUD.HideSecondBattleHUD();
 
         //attack enemy

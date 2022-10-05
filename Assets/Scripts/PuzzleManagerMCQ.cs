@@ -65,7 +65,7 @@ public class PuzzleManagerMCQ : MonoBehaviour
 
         CorrectIndicator.text = exp;
 
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(3f);
     }
 
     public void buttonControl(bool control)
