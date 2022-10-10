@@ -12,7 +12,7 @@ public class Chest : Collectable
         if (!collected)
         {
             collected = true;
-            EnvironmentManager.instance.openedChests.Add(this);
+            //EnvironmentManager.instance.openedChests.Add(this);
             GetComponent<SpriteRenderer>().sprite = emptyChest;
             GameManager.instance.ChangePlayerStats(0, 6, 3, 0, 0);
         }
@@ -21,6 +21,11 @@ public class Chest : Collectable
     public void setCollected(bool b)
     {
         collected = b;
+    }
+
+    public void changeSprite()
+    {
+        GetComponent<SpriteRenderer>().sprite = emptyChest;
     }
 
 }

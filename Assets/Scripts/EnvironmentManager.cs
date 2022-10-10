@@ -11,7 +11,8 @@ public class EnvironmentManager : MonoBehaviour
     //public GameObject playerUnit;
     public GameObject playerUnitField;
     public Player player;
-    public List<Chest> openedChests;
+    public List<Chest> Chests;
+    public List<EnemyUnit> Enemy;
 
     //map references
     public Transform startingPos;
@@ -46,10 +47,12 @@ public class EnvironmentManager : MonoBehaviour
             playerUnitField.transform.position = tempPos;
         }
 
-        foreach(Chest chest in openedChests)
+        SceneManager.sceneLoaded += LoadState;
+
+        /*foreach(Chest chest in openedChests)
         {
             chest.setCollected(true);
-        }
+        }*/
 
         //cameraMotor.lookAT = playerUnit.transform;
 
@@ -79,6 +82,78 @@ public class EnvironmentManager : MonoBehaviour
     public void DestoryObject()
     {
         Destroy(gameObject);
+    }
+
+    public void SaveState()
+    {
+        string chestSave = "";
+        string enemySave = "";
+
+        foreach(Chest chest in Chests)
+        {
+            chestSave += chest.collected + "|";
+        }
+
+        chestSave += 0;
+
+        foreach (EnemyUnit enemy in Enemy)
+        {
+            enemySave += enemy.defeated + "|";
+        }
+
+        enemySave += 0;
+
+        PlayerPrefs.SetString("Chest", chestSave);
+        PlayerPrefs.SetString("Enemy", enemySave);
+        PlayerPrefs.Save();
+
+
+    }
+
+    public void LoadState(Scene s, LoadSceneMode mode)
+    {
+        if (PlayerPrefs.HasKey("Chest"))
+        {
+            string[] data = PlayerPrefs.GetString("Chest").Split("|");
+            for (int i = 0; i < Chests.Count; i++)
+            {
+                if (Chests[i] == null) { 
+                    return; 
+                }
+
+                if (data[i] == "True")
+                {
+                    Chests[i].collected = true;
+                    Chests[i].changeSprite();
+                }
+                else if(data[i] == "False")
+                {
+                    Chests[i].collected = false;
+                }
+                else
+                {
+                    Debug.Log("End");
+                }
+                
+            }
+        }
+
+        if (PlayerPrefs.HasKey("Enemy"))
+        {
+            string[] data = PlayerPrefs.GetString("Enemy").Split("|");
+            for (int i = 0; i < Enemy.Count; i++)
+            {
+                if (Chests[i] == null)
+                {
+                    return;
+                }
+
+                if(data[i] == "True")
+                {
+                    Enemy[i].Defeated();
+                }
+            }
+        }
     }
 
 }

@@ -1217,7 +1217,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: enemy_0
+      name: orge
       rect:
         serializedVersion: 2
         x: 96
@@ -1238,7 +1238,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: enemy_1
+      name: monster
       rect:
         serializedVersion: 2
         x: 128
@@ -1259,7 +1259,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: enemy_2
+      name: eye_monster
       rect:
         serializedVersion: 2
         x: 160
@@ -1330,7 +1330,7 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1351,7 +1351,7 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1372,7 +1372,7 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1393,7 +1393,7 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1414,7 +1414,7 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1422,6 +1422,132 @@ TextureImporter:
       bones: []
       spriteID: 1077c16a4ca584a47a4f451ddaba6934
       internalID: 194529991
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wall_9
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 240
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1fb2d5f8486a81649a10ffebcb4b5738
+      internalID: -1140938784
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wall_10
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 224
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 64ca9dd5938f9094a9b0c4ebeb8855ea
+      internalID: 834213155
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wall_11
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 208
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 121ee0bfd6ad5054f8a95ed2918ac72b
+      internalID: -1954108390
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wall_12
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 192
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 20b1e61fe62c54a4aba595459f3fa653
+      internalID: 1749906751
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wall_13
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 192
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 22a29b50fb1978946b3427b0ff7aedaa
+      internalID: -1282801036
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: small_orge
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 80
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f567ec5b1426d641994f0810303422a
+      internalID: 1294372298
       vertices: []
       indices: 
       edges: []
@@ -1437,6 +1563,8 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
+      chest_2: -708538502
+      wall_11: -1954108390
       pillar_1: 1761998179
       chest_0: 442591604
       stairs_0: -327330491
@@ -1468,30 +1596,34 @@ TextureImporter:
       floor_10: 1230990778
       torch_4: 1366723729
       chest_1: -1970268348
-      enemy_0: 1602009926
+      eye_monster: 1508351890
+      monster: 1599771880
       floor_15: 1177848040
       floor_6: 1353914840
       crate_0: -1609916680
+      small_orge: 1294372298
       torch_1: -1369901461
+      wall_9: -1140938784
       torch_5: -41162609
       floor_0: -7826287199498012479
       player_1: -4869357254534750094
-      enemy_1: 1599771880
       shade_1: 988053290
       chest_3: 1378418346
       wall_2: 1575532639
       wall_6: -1968273914
-      enemy_2: 1508351890
       floor_13: 1567074257
       floor_8: -1988393519
       floor_11: -802666904
       torch_7: -1669103088
       healing_fountain_1: -1968819421
+      wall_10: 834213155
       torch_8: -1843648823
       floor_9: -198984682
       floor_1: -317107314
       wall_4: 1971131855
       floor_16: 1999227755
+      wall_13: -1282801036
+      orge: 1602009926
       floor_12: -699245917
       stairs_2: -26324598
       floor_3: 170914482
@@ -1500,7 +1632,7 @@ TextureImporter:
       wall_7: -1405342330
       shade_0: -487866008
       crate_1: 1382623116
-      chest_2: -708538502
+      wall_12: 1749906751
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
