@@ -204,7 +204,7 @@ Transform:
   - {fileID: 644053943}
   - {fileID: 1027850650}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &208536858
 GameObject:
@@ -4207,7 +4207,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &871654332
 GameObject:
@@ -4555,7 +4555,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &985212216
 GameObject:
@@ -6922,7 +6922,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1492099779
 GameObject:
@@ -6954,7 +6954,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1492099781
 MonoBehaviour:
@@ -7326,7 +7326,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerPrefab: {fileID: 4830491747708126294, guid: a0d7bad5b91345c42970e1ee565d4750, type: 3}
-  enemyPrefab: {fileID: 5528750275132637548, guid: fccd65be1c99c92459ba65cb33497361, type: 3}
+  enemyPrefab:
+  - {fileID: 4483696027692382182, guid: 1331c2007226e624e957472857ad5430, type: 3}
+  - {fileID: 5781617771761025570, guid: 6e2fbbad3915949429d95fb243e95d28, type: 3}
+  - {fileID: 1288605335130339030, guid: 79a564438b884614db46dda606f00169, type: 3}
+  - {fileID: 4787911444472960254, guid: aa65260fcbc42b04e95ea1d0045fd350, type: 3}
+  - {fileID: 6660705731868361276, guid: 18cde83c136b7d1409b5768d042a1a0b, type: 3}
+  - {fileID: 1079897207656537960, guid: adad877a65b6c854bb2516631967ac20, type: 3}
+  - {fileID: 5528750275132637548, guid: fccd65be1c99c92459ba65cb33497361, type: 3}
+  - {fileID: 7303961871967248776, guid: 407686295b50bd2458c0c497b4e3ba5d, type: 3}
+  - {fileID: 3018002503608866665, guid: 61ff78abc61877749b98632e681a3baa, type: 3}
+  - {fileID: 6865489428239685462, guid: aa8a06ea5608e9540bf47af5e96a9f02, type: 3}
+  - {fileID: 106681476035073414, guid: 78b7f8d9d87132842b4d50b04f941cce, type: 3}
   playerPosition: {fileID: 883794424}
   enemyPosition: {fileID: 855283314}
   battleHUD: {fileID: 1492099781}
@@ -7347,7 +7358,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1701888679
 MonoBehaviour:

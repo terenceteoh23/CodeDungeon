@@ -9,7 +9,7 @@ public class BattleManager : MonoBehaviour
 {
     //character prefabs
     public GameObject playerPrefab;
-    public GameObject enemyPrefab;
+    public List<GameObject> enemyPrefab;
 
     //character positions
     public Transform playerPosition;
@@ -44,7 +44,7 @@ public class BattleManager : MonoBehaviour
         GameObject playerGO = Instantiate(playerPrefab, playerPosition);
         player = playerGO.GetComponent<Player>();
 
-        GameObject enemy = Instantiate(enemyPrefab, enemyPosition);
+        GameObject enemy = Instantiate(enemyPrefab[GameManager.instance.enemyId], enemyPosition);
         enemyUnit = enemy.GetComponent<CharacterInfo>();
 
         //disable certain scripts

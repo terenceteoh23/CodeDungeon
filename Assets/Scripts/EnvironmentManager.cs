@@ -124,7 +124,7 @@ public class EnvironmentManager : MonoBehaviour
                 if (data[i] == "True")
                 {
                     Chests[i].collected = true;
-                    Chests[i].changeSprite();
+                    Chests[i].ChangeSprite();
                 }
                 else if(data[i] == "False")
                 {

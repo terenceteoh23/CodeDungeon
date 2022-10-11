@@ -1532,7 +1532,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: small_orge
+      name: mask_orge
       rect:
         serializedVersion: 2
         x: 16
@@ -1540,7 +1540,7 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1548,6 +1548,153 @@ TextureImporter:
       bones: []
       spriteID: 4f567ec5b1426d641994f0810303422a
       internalID: 1294372298
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flesh_monster
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 64
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 23290a05d7b187e44a282676ae3bf2f5
+      internalID: 1793345417
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: big_slime
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 48
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8dc3592eabfe1f34fa5cbc098f0a5a21
+      internalID: -122780407
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: slime
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d6e462dfb6b3986408cd2eb2686fbb8b
+      internalID: 1886387892
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: clay_slime
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 43cccc8d0189b124a844f03be2aabc7b
+      internalID: 1826368248
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: small_orge
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 80
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0d64f675551e77f47b7c02d8f986fd7f
+      internalID: -886128607
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hooded_figure
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 64
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: faa18d5699397ed4ab4dfbbbb31a6bd4
+      internalID: -1690472365
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ember_soul
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 48
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a2d285c50ed670a43a4eae385a7fddae
+      internalID: 284529920
       vertices: []
       indices: 
       edges: []
@@ -1578,6 +1725,8 @@ TextureImporter:
       sword_0: -1909438315
       floor_5: -1647032801
       torch_2: 1633183410
+      flesh_monster: 1793345417
+      mask_orge: 1294372298
       player_0: 4018074224661003100
       floor_4: 530045391
       healing_fountain_0: 769527730
@@ -1589,6 +1738,8 @@ TextureImporter:
       torch_6: 546165699
       crate_2: 1418176153
       shade_3: -1697255045
+      clay_slime: 1826368248
+      ember_soul: 284529920
       torch_3: 106889172
       crate_3: -940709823
       wall_8: 2078511469
@@ -1598,10 +1749,11 @@ TextureImporter:
       chest_1: -1970268348
       eye_monster: 1508351890
       monster: 1599771880
+      slime: 1886387892
       floor_15: 1177848040
       floor_6: 1353914840
       crate_0: -1609916680
-      small_orge: 1294372298
+      small_orge: -886128607
       torch_1: -1369901461
       wall_9: -1140938784
       torch_5: -41162609
@@ -1611,6 +1763,8 @@ TextureImporter:
       chest_3: 1378418346
       wall_2: 1575532639
       wall_6: -1968273914
+      hooded_figure: -1690472365
+      big_slime: -122780407
       floor_13: 1567074257
       floor_8: -1988393519
       floor_11: -802666904
@@ -1630,6 +1784,7 @@ TextureImporter:
       stairs_3: 512760648
       pillar_0: 1652476209
       wall_7: -1405342330
+      Atlas_0: 866063870
       shade_0: -487866008
       crate_1: 1382623116
       wall_12: 1749906751

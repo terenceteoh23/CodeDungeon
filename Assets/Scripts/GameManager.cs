@@ -24,36 +24,6 @@ public class GameManager : MonoBehaviour
         }
 
         SceneManager.sceneLoaded += LoadState;
-
-        //playerFieldData = playerData;
-
-        /*if (playerFieldData.isStarting == true)
-        {
-            playerUnitField.transform.position = startingPos.position;
-            playerFieldData.isStarting = false;
-            Debug.Log("STARTING");
-        }
-        else
-        {
-            Vector3 tempPos = playerFieldData.GetLocation();
-            playerUnitField.transform.position = tempPos;
-            Debug.Log("NOT STARTING");
-        }*/
-            
-
-        /*//create a clone of the prefab
-        if (player.isStarting == true)
-        {
-            playerUnitField = Instantiate(playerUnit, startingPos);
-            player.isStarting = false;
-            Debug.Log("STARTING");
-        }
-        else
-        {
-            Vector3 tempPos = player.GetLocation();
-            playerUnitField = Instantiate(playerUnit, tempPos, new Quaternion(0,0,0,0));
-            Debug.Log("NOT STARTING");
-        }*/
     }
 
     //Resources
@@ -65,16 +35,9 @@ public class GameManager : MonoBehaviour
     //References
     public GameObject playerUnit;
     public Player player;
-    //public GameObject playerUnitField;
-
-    public EnvironmentManager environmentManager;
-
-    //public Transform startingPos;
-    //public bool starting;
-
+    public int enemyId;
     
-    //public Player playerFieldData;
-
+    public EnvironmentManager environmentManager;
     public FloatingTextManager floatingTextManager;
 
     public void ShowText(string msg, int fontSize, Color color, Vector3 position, Vector3 motion, float duration)
@@ -91,17 +54,6 @@ public class GameManager : MonoBehaviour
     {
         player.isStarting = b;
     }
-
-    /*public void SavePlayerLocation()
-    {
-        Scene scene = SceneManager.GetActiveScene();
-        string sceneName = scene.name;
-
-        float cordX = playerUnitField.transform.localPosition.x;
-        float cordY = playerUnitField.transform.localPosition.y;
-
-        playerData.SaveLocation(sceneName, cordX, cordY);
-    }*/
 
     public void ChangeScene(string sceneName)
     {

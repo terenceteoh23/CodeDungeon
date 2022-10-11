@@ -7,6 +7,7 @@ public class EnemyUnit : Colliable
     public string battleScene;
     public bool defeated;
     public GameObject Enemy;
+    public int enemyId;
 
     protected override void OnCollide(Collider2D coll)
     {
@@ -17,6 +18,8 @@ public class EnemyUnit : Colliable
             GameManager.instance.SaveState();
             EnvironmentManager.instance.SavePlayerLocation();
             EnvironmentManager.instance.SaveState();
+            GameManager.instance.enemyId = enemyId;
+
             //Teleport the player
             GameManager.instance.ChangeScene(battleScene);
         }
