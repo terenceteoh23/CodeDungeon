@@ -7344,6 +7344,7 @@ MonoBehaviour:
   AttackButton: {fileID: 683600058}
   HealButton: {fileID: 553944784}
   puzzleManagerMCQ: {fileID: 1882868611}
+  mainScene: Main
   state: 0
 --- !u!4 &1701888678
 Transform:
@@ -7997,7 +7998,7 @@ Camera:
   m_TargetDisplay: 0
   m_TargetEye: 3
   m_HDR: 1
-  m_AllowMSAA: 1
+  m_AllowMSAA: 0
   m_AllowDynamicResolution: 0
   m_ForceIntoRT: 0
   m_OcclusionCulling: 1

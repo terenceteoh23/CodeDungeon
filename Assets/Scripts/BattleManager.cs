@@ -27,6 +27,9 @@ public class BattleManager : MonoBehaviour
     //battle puzzle
     public PuzzleManagerMCQ puzzleManagerMCQ;
 
+    //Scene
+    public string mainScene;
+
     //battle states
     public BattleState state;
 
@@ -222,7 +225,7 @@ public class BattleManager : MonoBehaviour
         {
             battleHUD.UpdateBattleDialog("VICTORY!!");
             Player player_1 = playerPrefab.GetComponent<Player>();
-            player_1.SetStats(player);
+            player_1.SetStats(player); 
 
             yield return new WaitForSeconds(3f);
             GameManager.instance.ChangeScene(player.lastScene);
@@ -231,6 +234,9 @@ public class BattleManager : MonoBehaviour
         else if (state == BattleState.DEFEAT)
         {
             battleHUD.UpdateBattleDialog("You have been defeated......");
+            GameManager.instance.ChangeScene(mainScene);
+            player.isStarting = true;
+            EnvironmentManager.instance.DeleteState();
         }
             
     }

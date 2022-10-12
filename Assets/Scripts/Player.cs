@@ -13,6 +13,7 @@ public class Player : CharacterInfo
 
     public int knowledge;
 
+    public bool isDead;
     public bool isStarting;
     public bool changedScene;
     public string lastScene;
@@ -57,6 +58,14 @@ public class Player : CharacterInfo
         this.lastCordX = lastCordX;
         this.lastCordY = lastCordY;
         changedScene = true;
+    }
+
+    public void resetPlayer()
+    {
+        this.level = 1;
+        this.damage = 10;
+        this.maxHP = 60;
+        this.currentHP = 60;
     }
 
     public Vector3 GetLocation()

@@ -144,8 +144,9 @@ MonoBehaviour:
   maxHP: 60
   currentHP: 60
   knowledge: 1
-  isStarting: 0
+  isDead: 1
+  isStarting: 1
   changedScene: 1
-  lastScene: dungeon_1
-  lastCordX: 1.0627422
-  lastCordY: -1.8956285
+  lastScene: Main
+  lastCordX: 0
+  lastCordY: 0

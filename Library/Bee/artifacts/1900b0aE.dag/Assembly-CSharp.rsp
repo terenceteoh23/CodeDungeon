@@ -383,6 +383,7 @@
 "Assets/Scripts/PuzzleMangerDND.cs"
 "Assets/Scripts/PuzzleMCQ.cs"
 "Assets/Scripts/PuzzleMCQRepository.cs"
+"Assets/Scripts/StartArea.cs"
 -langversion:9.0
 
 /deterministic

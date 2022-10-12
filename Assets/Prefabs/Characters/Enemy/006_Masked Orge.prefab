@@ -132,8 +132,8 @@ MonoBehaviour:
     maxNormalAngle: 0
   battleScene: BattleScene
   defeated: 0
-  Enemy: {fileID: 0}
   enemyId: 5
+  enemy: {fileID: 1079897207656537960}
 --- !u!61 &4818818718207297256
 BoxCollider2D:
   m_ObjectHideFlags: 0

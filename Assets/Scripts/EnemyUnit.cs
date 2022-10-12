@@ -6,8 +6,8 @@ public class EnemyUnit : Colliable
 {
     public string battleScene;
     public bool defeated;
-    public GameObject Enemy;
     public int enemyId;
+    public GameObject enemy;
 
     protected override void OnCollide(Collider2D coll)
     {
@@ -17,7 +17,6 @@ public class EnemyUnit : Colliable
             {
                 Defeated();
 
-                GameManager.instance.SaveState();
                 EnvironmentManager.instance.SavePlayerLocation();
                 EnvironmentManager.instance.SaveState();
                 GameManager.instance.enemyId = enemyId;
@@ -31,7 +30,7 @@ public class EnemyUnit : Colliable
     public void Defeated()
     {
         defeated = true;
-        Destroy(Enemy);
+        Destroy(enemy);
 
     }
 }

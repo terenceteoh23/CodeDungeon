@@ -23,7 +23,12 @@ public class GameManager : MonoBehaviour
             DontDestroyOnLoad(gameObject);
         }
 
-        SceneManager.sceneLoaded += LoadState;
+        if (player.isDead)
+        {
+            player.resetPlayer();
+        }
+
+        //SceneManager.sceneLoaded += LoadState;
     }
 
     //Resources
@@ -60,14 +65,8 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene(sceneName);
     }
 
-    //save and load state
-    public void SaveState()
+    public void DestoryObject()
     {
-
-    }
-
-    public void LoadState(Scene s, LoadSceneMode mode)
-    {
-        
+        Destroy(gameObject);
     }
 }

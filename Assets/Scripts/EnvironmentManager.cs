@@ -20,6 +20,10 @@ public class EnvironmentManager : MonoBehaviour
 
     public void Awake()
     {
+        playerUnitField.GetComponent<BoxCollider2D>().enabled = false;
+
+        SceneManager.sceneLoaded += LoadState;
+
         if (instance == null)
         {
             //First run, set the instance
@@ -48,7 +52,7 @@ public class EnvironmentManager : MonoBehaviour
             playerUnitField.transform.position = tempPos;
         }
 
-        SceneManager.sceneLoaded += LoadState;
+        playerUnitField.GetComponent<BoxCollider2D>().enabled = true;
     }
 
     public void SavePlayerLocation()
@@ -71,7 +75,6 @@ public class EnvironmentManager : MonoBehaviour
     {
         string chestSave = "";
         string enemySave = "";
-        //string fountainSave = "";
 
         foreach(Chest chest in Chests)
         {
@@ -87,17 +90,9 @@ public class EnvironmentManager : MonoBehaviour
 
         enemySave += 0;
 
-        /*foreach (HealingFountain fountain in Fountains)
-        {
-            fountainSave += fountain.collected + "|";
-        }
-
-        fountainSave += 0;
-        */
-
+        //save the strings into playerprefs
         PlayerPrefs.SetString("Chest", chestSave);
         PlayerPrefs.SetString("Enemy", enemySave);
-        //PlayerPrefs.SetString("Fountain", fountainSave);
         PlayerPrefs.Save();
 
 
@@ -108,7 +103,7 @@ public class EnvironmentManager : MonoBehaviour
         if (PlayerPrefs.HasKey("Chest"))
         {
             string[] data = PlayerPrefs.GetString("Chest").Split("|");
-            if(Chests.Count > 0)
+            if(Chests.Count > 0 && Chests[0] != null)
             {
                 for (int i = 0; i < Chests.Count; i++)
                 {
@@ -133,7 +128,7 @@ public class EnvironmentManager : MonoBehaviour
         if (PlayerPrefs.HasKey("Enemy"))
         {
             string[] data = PlayerPrefs.GetString("Enemy").Split("|");
-            if(Enemy.Count > 0)
+            if (Enemy.Count > 0 && Enemy[0] != null)
             {
                 for (int i = 0; i < Enemy.Count; i++)
                 {
@@ -148,32 +143,6 @@ public class EnvironmentManager : MonoBehaviour
                 }
             }  
         }
-
-        /*if (PlayerPrefs.HasKey("Fountain"))
-        {
-            string[] data = PlayerPrefs.GetString("Fountain").Split("|");
-
-            if(Fountains.Count > 0)
-            {
-                for (int i = 0; i < Fountains.Count; i++)
-                {
-                    if (data[i] == "True")
-                    {
-                        Fountains[i].collected = true;
-                        Fountains[i].ChangeSprite();
-                    }
-                    else if (data[i] == "False")
-                    {
-                        Fountains[i].collected = false;
-                    }
-                    else
-                    {
-                        Debug.Log("End");
-                    }
-
-                }
-            }
-        }*/
     }
 
     public void DeleteState()

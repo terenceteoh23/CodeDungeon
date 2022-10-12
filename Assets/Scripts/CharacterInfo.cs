@@ -31,6 +31,8 @@ public class CharacterInfo : MonoBehaviour
 
     public void Heal()
     {
-        currentHP += 3;
+        int healAmount = damage / 2;
+
+        currentHP += healAmount;
     }
 }
