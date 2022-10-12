@@ -11,18 +11,21 @@ public class EnemyUnit : Colliable
 
     protected override void OnCollide(Collider2D coll)
     {
-        if (!defeated)
+        if(coll.name == "Player(field)")
         {
-            Defeated();
+            if (!defeated)
+            {
+                Defeated();
 
-            GameManager.instance.SaveState();
-            EnvironmentManager.instance.SavePlayerLocation();
-            EnvironmentManager.instance.SaveState();
-            GameManager.instance.enemyId = enemyId;
+                GameManager.instance.SaveState();
+                EnvironmentManager.instance.SavePlayerLocation();
+                EnvironmentManager.instance.SaveState();
+                GameManager.instance.enemyId = enemyId;
 
-            //Teleport the player
-            GameManager.instance.ChangeScene(battleScene);
-        }
+                //Teleport the player
+                GameManager.instance.ChangeScene(battleScene);
+            }
+        }   
     }
 
     public void Defeated()

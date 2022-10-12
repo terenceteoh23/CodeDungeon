@@ -16,6 +16,7 @@ public class Portal : Colliable
             //Teleport the player
             string sceneName = sceneNames[Random.Range(0, sceneNames.Length)];
 
+            EnvironmentManager.instance.DeleteState();
             EnvironmentManager.instance.DestoryObject();
             UnityEngine.SceneManagement.SceneManager.LoadScene(sceneName);
         }

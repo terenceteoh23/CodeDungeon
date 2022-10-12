@@ -1699,6 +1699,27 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: healing_fountain_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 160
+        width: 16
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a241955bbbdc86d47b6abe6f3f1a772c
+      internalID: -967807047
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -1776,6 +1797,7 @@ TextureImporter:
       floor_1: -317107314
       wall_4: 1971131855
       floor_16: 1999227755
+      healing_fountain_4: 866063870
       wall_13: -1282801036
       orge: 1602009926
       floor_12: -699245917
@@ -1784,7 +1806,7 @@ TextureImporter:
       stairs_3: 512760648
       pillar_0: 1652476209
       wall_7: -1405342330
-      Atlas_0: 866063870
+      Atlas_0: 1511142676
       shade_0: -487866008
       crate_1: 1382623116
       wall_12: 1749906751

@@ -35,6 +35,11 @@ public class Player : CharacterInfo
         this.maxHP += maxHP;
         this.currentHP += currentHP;
         this.knowledge += knowledge;
+
+        if(this.currentHP > this.maxHP)
+        {
+            this.currentHP = this.maxHP;
+        }
     }
 
     public void SetStats(Player player)
@@ -63,37 +68,4 @@ public class Player : CharacterInfo
     {
         return this;
     }
-
-    /*public void SaveState()
-    {
-        string s = "";
-
-        s += Cname + "|";
-        s += level.ToString() + "|";
-        s += damage.ToString() + "|";
-        s += maxHP.ToString() + "|";
-        s += currentHP.ToString() + "|";
-        s += knowledge.ToString();
-
-        PlayerPrefs.SetString("SaveState", s);
-    }
-
-    public void LoadState()
-    {
-        if (!PlayerPrefs.HasKey("SaveState"))
-        {
-
-            return;
-        }
-
-        string[] data = PlayerPrefs.GetString("SaveState").Split('|');
-
-        Cname = data[0];
-        level = int.Parse(data[1]);
-        damage = int.Parse(data[2]);
-        maxHP = int.Parse(data[3]);
-        currentHP = int.Parse(data[4]);
-        knowledge = int.Parse(data[5]);
-
-    }*/
 }

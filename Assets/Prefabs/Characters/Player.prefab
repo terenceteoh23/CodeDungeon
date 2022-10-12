@@ -141,11 +141,11 @@ MonoBehaviour:
   Cname: Player
   level: 1
   damage: 10
-  maxHP: 65
-  currentHP: 42
+  maxHP: 60
+  currentHP: 60
   knowledge: 1
   isStarting: 0
   changedScene: 1
-  lastScene: Main
-  lastCordX: -0.596
-  lastCordY: -0.3720002
+  lastScene: dungeon_1
+  lastCordX: 1.0627422
+  lastCordY: -1.8956285

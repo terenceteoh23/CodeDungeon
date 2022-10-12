@@ -12,6 +12,7 @@ public class EnvironmentManager : MonoBehaviour
     public GameObject playerUnitField;
     public Player player;
     public List<Chest> Chests;
+    //public List<HealingFountain> Fountains;
     public List<EnemyUnit> Enemy;
 
     //map references
@@ -48,24 +49,6 @@ public class EnvironmentManager : MonoBehaviour
         }
 
         SceneManager.sceneLoaded += LoadState;
-
-        /*foreach(Chest chest in openedChests)
-        {
-            chest.setCollected(true);
-        }*/
-
-        //cameraMotor.lookAT = playerUnit.transform;
-
-        /*if (player.changedScene)
-        {
-            Vector3 pos = new(player.lastCordX, player.lastCordY, 0);
-
-            playerUnitField.transform.position = pos;
-
-            player.changedScene = false;
-        }*/
-
-
     }
 
     public void SavePlayerLocation()
@@ -88,6 +71,7 @@ public class EnvironmentManager : MonoBehaviour
     {
         string chestSave = "";
         string enemySave = "";
+        //string fountainSave = "";
 
         foreach(Chest chest in Chests)
         {
@@ -103,8 +87,17 @@ public class EnvironmentManager : MonoBehaviour
 
         enemySave += 0;
 
+        /*foreach (HealingFountain fountain in Fountains)
+        {
+            fountainSave += fountain.collected + "|";
+        }
+
+        fountainSave += 0;
+        */
+
         PlayerPrefs.SetString("Chest", chestSave);
         PlayerPrefs.SetString("Enemy", enemySave);
+        //PlayerPrefs.SetString("Fountain", fountainSave);
         PlayerPrefs.Save();
 
 
@@ -115,45 +108,77 @@ public class EnvironmentManager : MonoBehaviour
         if (PlayerPrefs.HasKey("Chest"))
         {
             string[] data = PlayerPrefs.GetString("Chest").Split("|");
-            for (int i = 0; i < Chests.Count; i++)
+            if(Chests.Count > 0)
             {
-                if (Chests[i] == null) { 
-                    return; 
-                }
+                for (int i = 0; i < Chests.Count; i++)
+                {
+                    if (data[i] == "True")
+                    {
+                        Chests[i].collected = true;
+                        Chests[i].ChangeSprite();
+                    }
+                    else if (data[i] == "False")
+                    {
+                        Chests[i].collected = false;
+                    }
+                    else
+                    {
+                        Debug.Log("End");
+                    }
 
-                if (data[i] == "True")
-                {
-                    Chests[i].collected = true;
-                    Chests[i].ChangeSprite();
                 }
-                else if(data[i] == "False")
-                {
-                    Chests[i].collected = false;
-                }
-                else
-                {
-                    Debug.Log("End");
-                }
-                
-            }
+            }   
         }
 
         if (PlayerPrefs.HasKey("Enemy"))
         {
             string[] data = PlayerPrefs.GetString("Enemy").Split("|");
-            for (int i = 0; i < Enemy.Count; i++)
+            if(Enemy.Count > 0)
             {
-                if (Chests[i] == null)
+                for (int i = 0; i < Enemy.Count; i++)
                 {
-                    return;
+                    if (data[i] == "True")
+                    {
+                        Enemy[i].Defeated();
+                    }
+                    else
+                    {
+                        Debug.Log("End");
+                    }
                 }
+            }  
+        }
 
-                if(data[i] == "True")
+        /*if (PlayerPrefs.HasKey("Fountain"))
+        {
+            string[] data = PlayerPrefs.GetString("Fountain").Split("|");
+
+            if(Fountains.Count > 0)
+            {
+                for (int i = 0; i < Fountains.Count; i++)
                 {
-                    Enemy[i].Defeated();
+                    if (data[i] == "True")
+                    {
+                        Fountains[i].collected = true;
+                        Fountains[i].ChangeSprite();
+                    }
+                    else if (data[i] == "False")
+                    {
+                        Fountains[i].collected = false;
+                    }
+                    else
+                    {
+                        Debug.Log("End");
+                    }
+
                 }
             }
-        }
+        }*/
+    }
+
+    public void DeleteState()
+    {
+        PlayerPrefs.DeleteAll();
     }
 
 }

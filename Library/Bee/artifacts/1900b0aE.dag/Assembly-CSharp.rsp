@@ -374,6 +374,7 @@
 "Assets/Scripts/FloatingText.cs"
 "Assets/Scripts/FloatingTextManager.cs"
 "Assets/Scripts/GameManager.cs"
+"Assets/Scripts/HealingFountain.cs"
 "Assets/Scripts/Player.cs"
 "Assets/Scripts/PlayerBattleHUD.cs"
 "Assets/Scripts/PlayerMovement.cs"
