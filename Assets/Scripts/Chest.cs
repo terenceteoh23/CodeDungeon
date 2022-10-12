@@ -1,19 +1,30 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Chest : Collectable
 {
     public Sprite emptyChest;
-    public int moneyAmount = 10;
+    public int damage;
+    public int maxhp;
+    public int hp;
     protected override void OnCollect()
     {
         if (!collected)
         {
             collected = true;
             GetComponent<SpriteRenderer>().sprite = emptyChest;
-            GameManager.instance.ShowText("+" + moneyAmount + " Money Gained", 25, Color.yellow, transform.position, Vector3.up * 50, 1.0f);
+            GameManager.instance.ShowText("+" + damage + " Damage\n+" + maxhp + " Max HP\nRecovered " + hp + " HP", 25, Color.white, transform.position, Vector3.up * 50, 2.0f);
+            GameManager.instance.ChangePlayerStats(0, damage, maxhp, hp, 0);
         }
+    }
+
+    public void SetCollected(bool b)
+    {
+        collected = b;
+    }
+
+    public void ChangeSprite()
+    {
+        GetComponent<SpriteRenderer>().sprite = emptyChest;
     }
 
 }

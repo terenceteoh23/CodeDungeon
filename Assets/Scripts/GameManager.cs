@@ -8,14 +8,27 @@ public class GameManager : MonoBehaviour
     public static GameManager instance;
     private void Awake()
     {
-        if(GameManager.instance != null)
+        if (instance == null)
         {
-            return;
+            //First run, set the instance
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+
+        }
+        else if (instance != this)
+        {
+            //Instance is not the same as the one we have, destroy old one, and reset to newest one
+            Destroy(instance.gameObject);
+            instance = this;
+            DontDestroyOnLoad(gameObject);
         }
 
-        instance = this;
-        SceneManager.sceneLoaded += LoadState;
-        DontDestroyOnLoad(gameObject);
+        if (player.isDead)
+        {
+            player.resetPlayer();
+        }
+
+        //SceneManager.sceneLoaded += LoadState;
     }
 
     //Resources
@@ -25,45 +38,35 @@ public class GameManager : MonoBehaviour
     public List<int> xpTable;
 
     //References
+    public GameObject playerUnit;
     public Player player;
-
+    public int enemyId;
+    
+    public EnvironmentManager environmentManager;
     public FloatingTextManager floatingTextManager;
-
-    public int pesos;
-    public int exp;
 
     public void ShowText(string msg, int fontSize, Color color, Vector3 position, Vector3 motion, float duration)
     {
         floatingTextManager.Show(msg, fontSize, color, position, motion, duration);
     }
 
-    //save and load state
-    public void SaveState()
+    public void ChangePlayerStats(int level, int damage, int maxhp, int currenthp, int knowledge)
     {
-        string s = "";
-
-        s += "0" + "|";
-        s += pesos.ToString() + "|";
-        s += exp.ToString() + "|";
-        s += "0";
-
-        PlayerPrefs.SetString("SaveState", s);
+        player.ChangeStats(level, damage, maxhp, currenthp, knowledge);
     }
 
-    public void LoadState(Scene s, LoadSceneMode mode)
+    public void PlayerIsStarting(bool b)
     {
-        if (!PlayerPrefs.HasKey("SaveState")){
+        player.isStarting = b;
+    }
 
-            return;
-        }
+    public void ChangeScene(string sceneName)
+    {
+        SceneManager.LoadScene(sceneName);
+    }
 
-         string[] data = PlayerPrefs.GetString("SaveState").Split('|');
-
-         pesos = int.Parse(data[1]);
-         exp = int.Parse(data[2]);
-
-         Debug.Log("Load State");
-        
-
+    public void DestoryObject()
+    {
+        Destroy(gameObject);
     }
 }

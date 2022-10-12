@@ -11,4 +11,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/dungeon_1.unity
     guid: e0cae3ead89cede4a97bafef987b991c
+  - enabled: 1
+    path: Assets/Scenes/BattleScene.unity
+    guid: 0d498cefd6e61aa4cb86a0db34b2e401
+  - enabled: 1
+    path: Assets/Scenes/dungeon_2.unity
+    guid: 31e149a7dcd04d34c96ff1e6fdc18e99
+  - enabled: 0
+    path: Assets/Scenes/Puzzle_MCQ/Puzzle_MCQ_1.unity
+    guid: 08a3599a7e858d347bdf0ceb14d64c7d
   m_configObjects: {}

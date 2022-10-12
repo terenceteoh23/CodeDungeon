@@ -1,57 +1,80 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
-public class Player : MonoBehaviour
+public class Player : CharacterInfo
 {
-    private BoxCollider2D boxColider;
-    private Vector3 moveDelta;
-    private RaycastHit2D hit;
-    public float speed = 1f;
+    //string Cname
+    //int level
+    //int damage
+    //int maxhp
+    //int currenthp
 
-    private void Start()
+    public int knowledge;
+
+    public bool isDead;
+    public bool isStarting;
+    public bool changedScene;
+    public string lastScene;
+    public float lastCordX;
+    public float lastCordY;
+
+    public void UpdateStats(Player player)
     {
-        boxColider = GetComponent<BoxCollider2D>();
+        this.level = player.level;
+        this.damage = player.damage;
+        this.maxHP = player.maxHP;
+        this.currentHP = player.currentHP;
+        this.knowledge = player.knowledge;
     }
 
-    private void FixedUpdate()
+    public void ChangeStats(int level, int damage, int maxHP, int currentHP, int knowledge)
     {
+        this.level += level;
+        this.damage += damage;
+        this.maxHP += maxHP;
+        this.currentHP += currentHP;
+        this.knowledge += knowledge;
 
-        float x = Input.GetAxisRaw("Horizontal");
-        float y = Input.GetAxisRaw("Vertical");
-
-        //Reset the move delta
-        moveDelta = new Vector3(x, y, 0);
-
-        //swap sprite direction
-        if(moveDelta.x > 0)
+        if(this.currentHP > this.maxHP)
         {
-            transform.localScale = Vector3.one;
+            this.currentHP = this.maxHP;
         }
-        else if(moveDelta.x < 0)
-        {
-            transform.localScale = new Vector3(-1, 1, 0);
-        }
-
-        //make sure we can move on the y axis
-        hit = Physics2D.BoxCast(transform.position, boxColider.size, 0, new Vector2(0, moveDelta.y), Mathf.Abs(moveDelta.y * Time.deltaTime), LayerMask.GetMask("Character", "Blocking"));
-
-        if (hit.collider == null)
-        {
-            //make the player move
-            transform.Translate(0, moveDelta.y * speed * Time.deltaTime, 0);
-        }
-
-        //make sure we can move on the x axis
-        hit = Physics2D.BoxCast(transform.position, boxColider.size, 0, new Vector2(moveDelta.x, 0), Mathf.Abs(moveDelta.x * Time.deltaTime), LayerMask.GetMask("Character", "Blocking"));
-
-        if (hit.collider == null)
-        {
-            //make the player move
-            transform.Translate(moveDelta.x * speed * Time.deltaTime, 0, 0);
-        }
-
-
     }
 
+    public void SetStats(Player player)
+    {
+        this.level = player.level;
+        this.damage = player.damage;
+        this.maxHP = player.maxHP;
+        this.currentHP = player.currentHP;
+        this.knowledge = player.knowledge;
+    }
+
+    public void SaveLocation(string lastScene, float lastCordX, float lastCordY)
+    {
+        this.lastScene = lastScene;
+        this.lastCordX = lastCordX;
+        this.lastCordY = lastCordY;
+        changedScene = true;
+    }
+
+    public void resetPlayer()
+    {
+        this.level = 1;
+        this.damage = 10;
+        this.maxHP = 60;
+        this.currentHP = 60;
+    }
+
+    public Vector3 GetLocation()
+    {
+        return new Vector3(lastCordX, lastCordY, 0);
+    }
+
+    public Player GetPlayer()
+    {
+        return this;
+    }
 }
