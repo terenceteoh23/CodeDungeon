@@ -1094,4 +1094,4 @@ ScriptsOnlyBuild:
   - Assets/Scenes/dungeon_1.unity
   - Assets/Scenes/BattleScene.unity
   - Assets/Scenes/dungeon_2.unity
-  playerPath: C:/Users/tteoh/OneDrive/Desktop/College/Degree/Sem 5/test/CodeDungeon.exe
+  playerPath: C:/Users/tteoh/OneDrive/Desktop/College/Degree/Sem 5/CodeDungeon/CodeDungeon.exe
