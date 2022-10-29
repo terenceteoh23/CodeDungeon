@@ -1720,6 +1720,27 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: potion_0
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 63
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0208a6a52d167ca43bc38457cd636b29
+      internalID: -517918343
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -1731,7 +1752,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      chest_2: -708538502
+      wall_12: 1749906751
       wall_11: -1954108390
       pillar_1: 1761998179
       chest_0: 442591604
@@ -1761,6 +1782,7 @@ TextureImporter:
       shade_3: -1697255045
       clay_slime: 1826368248
       ember_soul: 284529920
+      potion_0: 1511142676
       torch_3: 106889172
       crate_3: -940709823
       wall_8: 2078511469
@@ -1806,10 +1828,9 @@ TextureImporter:
       stairs_3: 512760648
       pillar_0: 1652476209
       wall_7: -1405342330
-      Atlas_0: 1511142676
       shade_0: -487866008
       crate_1: 1382623116
-      wall_12: 1749906751
+      chest_2: -708538502
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

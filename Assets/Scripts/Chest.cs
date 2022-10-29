@@ -6,13 +6,16 @@ public class Chest : Collectable
     public int damage;
     public int maxhp;
     public int hp;
+    public ItemData item;
+
     protected override void OnCollect()
     {
         if (!collected)
         {
             collected = true;
             GetComponent<SpriteRenderer>().sprite = emptyChest;
-            GameManager.instance.ShowText("+" + damage + " Damage\n+" + maxhp + " Max HP\nRecovered " + hp + " HP", 25, Color.white, transform.position, Vector3.up * 50, 2.0f);
+            GameManager.instance.inventory.Add(item);
+            GameManager.instance.ShowText("+" + damage + " Damage\n+" + maxhp + " Max HP", 25, Color.white, transform.position, Vector3.up * 50, 2.0f);
             GameManager.instance.ChangePlayerStats(0, damage, maxhp, hp, 0);
         }
     }

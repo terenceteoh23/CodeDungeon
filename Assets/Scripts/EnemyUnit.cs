@@ -19,6 +19,7 @@ public class EnemyUnit : Colliable
 
                 EnvironmentManager.instance.SavePlayerLocation();
                 EnvironmentManager.instance.SaveState();
+                GameManager.instance.SaveState();
                 GameManager.instance.enemyId = enemyId;
 
                 //Teleport the player

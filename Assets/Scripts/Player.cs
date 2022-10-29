@@ -77,4 +77,21 @@ public class Player : CharacterInfo
     {
         return this;
     }
+
+    public string SaveData()
+    {
+        return level + "|" + damage + "|" + maxHP + "|" + currentHP + "|" + knowledge;
+    }
+
+    public void LoadData(string data)
+    {
+        string[] arr = data.Split("|");
+
+        level = int.Parse(arr[0]);
+        damage = int.Parse(arr[1]);
+        maxHP = int.Parse(arr[2]);
+        currentHP = int.Parse(arr[3]);
+        knowledge = int.Parse(arr[4]);
+
+    }
 }

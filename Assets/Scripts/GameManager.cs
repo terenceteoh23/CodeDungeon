@@ -29,6 +29,7 @@ public class GameManager : MonoBehaviour
         }
 
         //SceneManager.sceneLoaded += LoadState;
+        LoadState();
     }
 
     //Resources
@@ -44,6 +45,7 @@ public class GameManager : MonoBehaviour
     
     public EnvironmentManager environmentManager;
     public FloatingTextManager floatingTextManager;
+    public Inventory inventory;
 
     public void ShowText(string msg, int fontSize, Color color, Vector3 position, Vector3 motion, float duration)
     {
@@ -68,5 +70,18 @@ public class GameManager : MonoBehaviour
     public void DestoryObject()
     {
         Destroy(gameObject);
+    }
+
+    public void SaveState()
+    {
+        PlayerPrefs.SetString("Player", player.SaveData());
+    }
+
+    public void LoadState()
+    {
+        if (PlayerPrefs.HasKey("Player"))
+        {
+            player.LoadData(PlayerPrefs.GetString("Player"));
+        }
     }
 }
