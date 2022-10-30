@@ -42,10 +42,12 @@ public class GameManager : MonoBehaviour
     public GameObject playerUnit;
     public Player player;
     public int enemyId;
-    
+    public Inventory inventory;
+
+    //other managers
     public EnvironmentManager environmentManager;
     public FloatingTextManager floatingTextManager;
-    public Inventory inventory;
+    public InventoryManager inventoryManager;
 
     public void ShowText(string msg, int fontSize, Color color, Vector3 position, Vector3 motion, float duration)
     {
@@ -65,6 +67,12 @@ public class GameManager : MonoBehaviour
     public void ChangeScene(string sceneName)
     {
         SceneManager.LoadScene(sceneName);
+    }
+
+    public void ObtainItem(ItemData item)
+    {
+        inventory.Add(item);
+        inventoryManager.DrawInventory(inventory.GetInventory());
     }
 
     public void DestoryObject()

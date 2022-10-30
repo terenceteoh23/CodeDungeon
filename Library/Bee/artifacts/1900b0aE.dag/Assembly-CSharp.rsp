@@ -377,6 +377,8 @@
 "Assets/Scripts/HealingFountain.cs"
 "Assets/Scripts/Inventory.cs"
 "Assets/Scripts/InventoryItem.cs"
+"Assets/Scripts/InventoryManager.cs"
+"Assets/Scripts/InventorySlot.cs"
 "Assets/Scripts/ItemData.cs"
 "Assets/Scripts/Player.cs"
 "Assets/Scripts/PlayerBattleHUD.cs"

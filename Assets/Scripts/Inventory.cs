@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Inventory : MonoBehaviour
 {
-    public List<ItemData> inventory = new List<ItemData>();
+    public List<ItemData> inventory = new List<ItemData>(5);
 
     public void Add(ItemData item) 
     {
@@ -14,5 +14,10 @@ public class Inventory : MonoBehaviour
     public void Remove(ItemData item)
     {
         inventory.Remove(item);
+    }
+
+    public List<ItemData> GetInventory()
+    {
+        return inventory;
     }
 }

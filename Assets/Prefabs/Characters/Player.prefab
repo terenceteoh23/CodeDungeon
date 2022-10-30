@@ -147,6 +147,6 @@ MonoBehaviour:
   isDead: 1
   isStarting: 1
   changedScene: 1
-  lastScene: dungeon_2
-  lastCordX: 0
-  lastCordY: 8.472728
+  lastScene: Main
+  lastCordX: 0.137
+  lastCordY: -0.511
