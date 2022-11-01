@@ -16,16 +16,21 @@ public class BattleManager : MonoBehaviour
     public Transform enemyPosition;
 
     //character stats
-    private Player player; 
+    public Player player; 
     private CharacterInfo enemyUnit;
 
     //battle hud
     public BattleHUDManager battleHUD;
     public Button AttackButton;
-    public Button HealButton;
+    public Button ItemButton;
 
     //battle puzzle
     public PuzzleManagerMCQ puzzleManagerMCQ;
+
+    //inventory
+    public InventoryManager inventoryManager;
+    public Inventory inventory;
+    public ItemManager itemManager;
 
     //Scene
     public string mainScene;
@@ -45,7 +50,6 @@ public class BattleManager : MonoBehaviour
     {    
         //create the game objects for player and the enemies
         GameObject playerGO = Instantiate(playerPrefab, playerPosition);
-        player = playerGO.GetComponent<Player>();
 
         GameObject enemy = Instantiate(enemyPrefab[GameManager.instance.enemyId], enemyPosition);
         enemyUnit = enemy.GetComponent<CharacterInfo>();
@@ -53,10 +57,17 @@ public class BattleManager : MonoBehaviour
         //disable certain scripts
         playerGO.GetComponent<PlayerMovement>().enabled = false;
 
+        //disable button
+        AttackButton.interactable = false;
+        ItemButton.interactable = false;
+
         battleHUD.UpdateBattleDialog("You have encountered a " + enemyUnit.Cname + ".");
 
         //setup the hud for both player and enemy
         battleHUD.BattleSetup(player, enemyUnit);
+
+        //load inventory
+        inventory.LoadInventory();
 
         //wait for 2 seconds
         yield return new WaitForSeconds(2f);
@@ -65,13 +76,13 @@ public class BattleManager : MonoBehaviour
         state = BattleState.PLAYERTURN;
         PlayerTurn();
 
-       
+        
     }
     private void PlayerTurn()
     {
         //enable buttons
         AttackButton.interactable = true;
-        HealButton.interactable = true;
+        ItemButton.interactable = true;
 
         //change battle dialog
         battleHUD.UpdateBattleDialog("Your Turn.");
@@ -79,6 +90,10 @@ public class BattleManager : MonoBehaviour
 
     private IEnumerator EnemyTurn()
     {
+        //disable button
+        AttackButton.interactable = false;
+        ItemButton.interactable = false;
+
         //change battle dialog
         battleHUD.UpdateBattleDialog("Enemy Turn.");
 
@@ -117,7 +132,7 @@ public class BattleManager : MonoBehaviour
     {
         //disable button
         AttackButton.interactable = false;
-        HealButton.interactable = false;
+        ItemButton.interactable = false;
 
         //wait for 3 seconds
         yield return new WaitForSeconds(3f);
@@ -177,7 +192,7 @@ public class BattleManager : MonoBehaviour
     {
         //disable button
         AttackButton.interactable = false;
-        HealButton.interactable = false;
+        ItemButton.interactable = false;
 
         //call heal function
         player.Heal();
@@ -194,6 +209,36 @@ public class BattleManager : MonoBehaviour
         //change to enemy turn
         state = BattleState.ENEMYTURN;
         StartCoroutine(EnemyTurn());
+    }
+
+    public void OpenInventory()
+    {
+        battleHUD.ShowInventory();
+        inventoryManager.DrawInventory(inventory.GetInventory());
+    }
+
+    public void UseItem(InventorySlot slot)
+    {
+        ItemData item = slot.itemData;
+        itemManager.UseItem(item);
+        inventory.Remove(item);
+        battleHUD.HideInventory();
+        battleHUD.playerHUD.SetHp(player.currentHP);
+
+        StartCoroutine(DisplayMessage("You have used a " + item.itemName, 3f));
+
+        //change to enemy turn
+        state = BattleState.ENEMYTURN;
+        StartCoroutine(EnemyTurn());
+    }
+
+    public IEnumerator DisplayMessage(string msg, float num)
+    {
+        //change battle dialog relfect healing
+        battleHUD.UpdateBattleDialog(msg);
+
+        //wait for 3 second
+        yield return new WaitForSeconds(3f);
     }
 
     public void AttackAction()
@@ -225,8 +270,9 @@ public class BattleManager : MonoBehaviour
         {
             battleHUD.UpdateBattleDialog("VICTORY!!");
             Player player_1 = playerPrefab.GetComponent<Player>();
-            player_1.SetStats(player); 
+            player_1.SetStats(player);
 
+            inventory.SaveInventory();
             yield return new WaitForSeconds(3f);
             GameManager.instance.ChangeScene(player.lastScene);
         }

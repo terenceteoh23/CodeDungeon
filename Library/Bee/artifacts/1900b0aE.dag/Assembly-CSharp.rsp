@@ -380,6 +380,8 @@
 "Assets/Scripts/InventoryManager.cs"
 "Assets/Scripts/InventorySlot.cs"
 "Assets/Scripts/ItemData.cs"
+"Assets/Scripts/ItemManager.cs"
+"Assets/Scripts/MenuManager.cs"
 "Assets/Scripts/Player.cs"
 "Assets/Scripts/PlayerBattleHUD.cs"
 "Assets/Scripts/PlayerMovement.cs"

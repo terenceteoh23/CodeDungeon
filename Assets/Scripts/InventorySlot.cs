@@ -5,8 +5,10 @@ using UnityEngine.UI;
 
 public class InventorySlot : MonoBehaviour
 {
+    public ItemData itemData;
     public Image itemIcon;
     public Text itemName;
+    public int slotNumber;
 
     public void ClearSlot()
     {
@@ -19,7 +21,9 @@ public class InventorySlot : MonoBehaviour
         itemIcon.enabled = true;
         itemName.enabled = true;
 
+        itemData = item;
         itemIcon.sprite = item.icon;
-        itemName.text = item.displayName;
+        itemName.text = item.itemName;
+        
     }
 }

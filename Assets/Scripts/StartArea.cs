@@ -8,8 +8,8 @@ public class StartArea : MonoBehaviour
 
     private void Start()
     {
-        player.resetPlayer();
-        EnvironmentManager.instance.DeleteState();
+        //player.resetPlayer();
+        //EnvironmentManager.instance.DeleteState();
     }
 
 }

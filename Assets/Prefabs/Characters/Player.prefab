@@ -140,13 +140,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Cname: Player
   level: 1
-  damage: 10
-  maxHP: 60
-  currentHP: 60
+  damage: 5
+  maxHP: 100
+  currentHP: 50
+  exp: 0
   knowledge: 1
-  isDead: 1
-  isStarting: 1
+  isDead: 0
+  isStarting: 0
   changedScene: 1
-  lastScene: Main
-  lastCordX: 0.137
-  lastCordY: -0.511
+  lastScene: dungeon_1
+  lastCordX: 1.5427418
+  lastCordY: -0.015629694

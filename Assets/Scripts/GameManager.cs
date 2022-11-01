@@ -28,7 +28,6 @@ public class GameManager : MonoBehaviour
             player.resetPlayer();
         }
 
-        //SceneManager.sceneLoaded += LoadState;
         LoadState();
     }
 
@@ -44,10 +43,12 @@ public class GameManager : MonoBehaviour
     public int enemyId;
     public Inventory inventory;
 
-    //other managers
+    //Managers
     public EnvironmentManager environmentManager;
     public FloatingTextManager floatingTextManager;
     public InventoryManager inventoryManager;
+    public MenuManager menuManager;
+    public ItemManager itemManager;
 
     public void ShowText(string msg, int fontSize, Color color, Vector3 position, Vector3 motion, float duration)
     {
@@ -64,25 +65,52 @@ public class GameManager : MonoBehaviour
         player.isStarting = b;
     }
 
+    //Changing Scene
     public void ChangeScene(string sceneName)
     {
         SceneManager.LoadScene(sceneName);
     }
 
+    //Item management
     public void ObtainItem(ItemData item)
     {
         inventory.Add(item);
+    }
+    public void UseItem(InventorySlot slot)
+    {
+        ItemData item = slot.itemData;
+        itemManager.UseItem(item);
+        inventory.Remove(item);
         inventoryManager.DrawInventory(inventory.GetInventory());
+        menuManager.SetPlayerInfo(player);
     }
 
+
+    //Show and Hide Menu
+    public void ShowMenu()
+    {
+        menuManager.ShowMenu();
+        inventoryManager.DrawInventory(inventory.GetInventory());
+        menuManager.SetPlayerInfo(player);
+        playerUnit.GetComponent<PlayerMovement>().enabled = false;
+    }
+    public void HideMenu()
+    {
+        menuManager.HideMenu();
+        playerUnit.GetComponent<PlayerMovement>().enabled = true;
+    }
+
+    //Destorying a gameobject
     public void DestoryObject()
     {
         Destroy(gameObject);
     }
 
+    //Saving and Loading
     public void SaveState()
     {
         PlayerPrefs.SetString("Player", player.SaveData());
+        inventory.SaveInventory();
     }
 
     public void LoadState()
@@ -91,5 +119,7 @@ public class GameManager : MonoBehaviour
         {
             player.LoadData(PlayerPrefs.GetString("Player"));
         }
+
+        inventory.LoadInventory();
     }
 }

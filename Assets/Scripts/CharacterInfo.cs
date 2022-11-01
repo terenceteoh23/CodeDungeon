@@ -13,6 +13,7 @@ public class CharacterInfo : MonoBehaviour
 
     public int maxHP;
     public int currentHP;
+    public int exp;
     
     public int Attack()
     {

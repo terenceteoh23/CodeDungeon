@@ -1729,7 +1729,7 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1737,6 +1737,48 @@ TextureImporter:
       bones: []
       spriteID: 0208a6a52d167ca43bc38457cd636b29
       internalID: -517918343
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: potion_1
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 47
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d071aee1e66c9d04c97890b883900a2f
+      internalID: -1871487901
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: potion_2
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d785e7d5edc16054081cbbc3947cf05d
+      internalID: -935925674
       vertices: []
       indices: 
       edges: []
@@ -1752,7 +1794,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      wall_12: 1749906751
+      chest_2: -708538502
       wall_11: -1954108390
       pillar_1: 1761998179
       chest_0: 442591604
@@ -1800,6 +1842,7 @@ TextureImporter:
       torch_1: -1369901461
       wall_9: -1140938784
       torch_5: -41162609
+      potion_1: -1871487901
       floor_0: -7826287199498012479
       player_1: -4869357254534750094
       shade_1: 988053290
@@ -1825,12 +1868,14 @@ TextureImporter:
       floor_12: -699245917
       stairs_2: -26324598
       floor_3: 170914482
+      potion_2: -935925674
       stairs_3: 512760648
       pillar_0: 1652476209
       wall_7: -1405342330
+      Atlas_0: -1530975195
       shade_0: -487866008
       crate_1: 1382623116
-      chest_2: -708538502
+      wall_12: 1749906751
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

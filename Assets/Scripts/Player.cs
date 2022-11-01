@@ -10,6 +10,7 @@ public class Player : CharacterInfo
     //int damage
     //int maxhp
     //int currenthp
+    //int exp
 
     public int knowledge;
 
@@ -27,6 +28,7 @@ public class Player : CharacterInfo
         this.maxHP = player.maxHP;
         this.currentHP = player.currentHP;
         this.knowledge = player.knowledge;
+        this.exp = player.exp;
     }
 
     public void ChangeStats(int level, int damage, int maxHP, int currentHP, int knowledge)
@@ -63,9 +65,10 @@ public class Player : CharacterInfo
     public void resetPlayer()
     {
         this.level = 1;
-        this.damage = 10;
-        this.maxHP = 60;
-        this.currentHP = 60;
+        this.damage = 5;
+        this.maxHP = 100;
+        this.currentHP = 100;
+        this.isDead = false;
     }
 
     public Vector3 GetLocation()
