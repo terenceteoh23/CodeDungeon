@@ -2554,7 +2554,7 @@ MonoBehaviour:
   playerSprites: []
   weaponSprites: []
   weaponPrices: 
-  xpTable: 
+  xpTable: 000000000f0000002d0000005a00000096000000dc0000002c0100009a0100008a02000052030000
   playerUnit: {fileID: 4830491747708126294, guid: a0d7bad5b91345c42970e1ee565d4750, type: 3}
   player: {fileID: -7506425661042637148, guid: a0d7bad5b91345c42970e1ee565d4750, type: 3}
   enemyId: 0
@@ -2609,6 +2609,7 @@ MonoBehaviour:
   expSlider: {fileID: 1993913002}
   hpText: {fileID: 1185772688}
   expText: {fileID: 745246322}
+  levelText: {fileID: 1890735160}
 --- !u!1 &1255850727
 GameObject:
   m_ObjectHideFlags: 0
@@ -5750,7 +5751,7 @@ GameObject:
   - component: {fileID: 1890735161}
   - component: {fileID: 1890735160}
   m_Layer: 5
-  m_Name: EXP
+  m_Name: Level
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5809,7 +5810,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'EXP:'
+  m_Text: 'Level :'
 --- !u!222 &1890735161
 CanvasRenderer:
   m_ObjectHideFlags: 0

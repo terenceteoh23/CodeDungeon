@@ -104,6 +104,7 @@ MonoBehaviour:
   damage: 10
   maxHP: 36
   currentHP: 36
+  exp: 40
 --- !u!114 &-3677219201768155095
 MonoBehaviour:
   m_ObjectHideFlags: 0

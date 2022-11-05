@@ -116,11 +116,6 @@ public class EnvironmentManager : MonoBehaviour
                     {
                         Chests[i].collected = false;
                     }
-                    else
-                    {
-                        Debug.Log("End");
-                    }
-
                 }
             }   
         }

@@ -19,7 +19,7 @@ public class ItemManager : MonoBehaviour
                 break;
 
             case 2:
-
+                GameManager.instance.SetEXP(100);
                 break;
 
             default:

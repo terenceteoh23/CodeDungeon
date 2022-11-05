@@ -35,7 +35,7 @@ public class GameManager : MonoBehaviour
     public List<Sprite> playerSprites;
     public List<Sprite> weaponSprites;
     public List<int> weaponPrices;
-    public List<int> xpTable;
+    public List<int> xpTable = new List<int>() { 0, 15, 45, 90, 150, 220, 300, 410, 650, 850};
 
     //References
     public GameObject playerUnit;
@@ -60,6 +60,32 @@ public class GameManager : MonoBehaviour
         player.ChangeStats(level, damage, maxhp, currenthp, knowledge);
     }
 
+    //set the exp gained
+    public void SetEXP(int exp)
+    {
+        player.SetEXP(exp);
+        int current = player.GetEXP();
+        if (current > xpTable[player.level])
+        {
+            LevelUp();
+        }
+    }
+
+    public void SetEXP()
+    {
+        int current = player.GetEXP();
+        if (current > xpTable[player.level])
+        {
+            LevelUp();
+        }
+    }
+
+    public void LevelUp()
+    {
+        player.LevelUp(xpTable);
+        SetEXP();
+    }
+
     public void PlayerIsStarting(bool b)
     {
         player.isStarting = b;
@@ -82,7 +108,7 @@ public class GameManager : MonoBehaviour
         itemManager.UseItem(item);
         inventory.Remove(item);
         inventoryManager.DrawInventory(inventory.GetInventory());
-        menuManager.SetPlayerInfo(player);
+        menuManager.SetPlayerInfo(player, xpTable);
     }
 
 
@@ -91,7 +117,7 @@ public class GameManager : MonoBehaviour
     {
         menuManager.ShowMenu();
         inventoryManager.DrawInventory(inventory.GetInventory());
-        menuManager.SetPlayerInfo(player);
+        menuManager.SetPlayerInfo(player , xpTable);
         playerUnit.GetComponent<PlayerMovement>().enabled = false;
     }
     public void HideMenu()

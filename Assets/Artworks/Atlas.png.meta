@@ -1750,7 +1750,7 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1771,7 +1771,7 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1779,6 +1779,27 @@ TextureImporter:
       bones: []
       spriteID: d785e7d5edc16054081cbbc3947cf05d
       internalID: -935925674
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NPC_0
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a9415e23c434fcb4d9ae1215ea8e0de2
+      internalID: 1445413105
       vertices: []
       indices: 
       edges: []
@@ -1794,7 +1815,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      chest_2: -708538502
+      wall_12: 1749906751
       wall_11: -1954108390
       pillar_1: 1761998179
       chest_0: 442591604
@@ -1834,6 +1855,7 @@ TextureImporter:
       chest_1: -1970268348
       eye_monster: 1508351890
       monster: 1599771880
+      NPC_0: -1530975195
       slime: 1886387892
       floor_15: 1177848040
       floor_6: 1353914840
@@ -1872,10 +1894,9 @@ TextureImporter:
       stairs_3: 512760648
       pillar_0: 1652476209
       wall_7: -1405342330
-      Atlas_0: -1530975195
       shade_0: -487866008
       crate_1: 1382623116
-      wall_12: 1749906751
+      chest_2: -708538502
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

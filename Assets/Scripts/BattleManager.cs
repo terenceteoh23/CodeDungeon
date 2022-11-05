@@ -269,9 +269,11 @@ public class BattleManager : MonoBehaviour
         if (state == BattleState.VICTORY)
         {
             battleHUD.UpdateBattleDialog("VICTORY!!");
-            Player player_1 = playerPrefab.GetComponent<Player>();
-            player_1.SetStats(player);
 
+            //get exp
+            GameManager.instance.SetEXP(enemyUnit.exp);
+
+            GameManager.instance.SaveState();
             inventory.SaveInventory();
             yield return new WaitForSeconds(3f);
             GameManager.instance.ChangeScene(player.lastScene);

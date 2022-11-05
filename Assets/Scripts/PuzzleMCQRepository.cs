@@ -21,7 +21,8 @@ public class PuzzleMCQRepository : MonoBehaviour
         }
         else
         {
-            puzzle = puzzles[Random.Range(0, puzzles.Count)];
+            //puzzle = puzzles[Random.Range(0, puzzles.Count)];
+            puzzle = puzzles[6];
         }
 
         return puzzle;
@@ -100,6 +101,20 @@ public class PuzzleMCQRepository : MonoBehaviour
             "Wrong",
             "6.5",
             "Correct!!"));
+
+        puzzles.Add(new PuzzleMCQ(
+            "How many races in malaysia",
+            "3",
+            "1",
+            "Wrong",
+            "2",
+            "Wrong",
+            "3",
+            "Correct",
+            "4",
+            "Wrong"));
+
+
 
     }
 
