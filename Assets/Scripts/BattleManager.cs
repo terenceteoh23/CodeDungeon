@@ -118,7 +118,7 @@ public class BattleManager : MonoBehaviour
         {
             //if player dead then defeated
             state = BattleState.DEFEAT;
-            EndBattle();
+            StartCoroutine(EndBattle());
         }
         else
         {   
@@ -269,19 +269,23 @@ public class BattleManager : MonoBehaviour
         if (state == BattleState.VICTORY)
         {
             battleHUD.UpdateBattleDialog("VICTORY!!");
+            yield return new WaitForSeconds(2f);
 
+
+            battleHUD.UpdateBattleDialog("Gained " + enemyUnit.exp + " exp.");
             //get exp
             GameManager.instance.SetEXP(enemyUnit.exp);
 
             GameManager.instance.SaveState();
             inventory.SaveInventory();
-            yield return new WaitForSeconds(3f);
+            yield return new WaitForSeconds(2f);
             GameManager.instance.ChangeScene(player.lastScene);
         }
             
         else if (state == BattleState.DEFEAT)
         {
             battleHUD.UpdateBattleDialog("You have been defeated......");
+            yield return new WaitForSeconds(2f);
             GameManager.instance.ChangeScene(mainScene);
             player.isStarting = true;
             EnvironmentManager.instance.DeleteState();

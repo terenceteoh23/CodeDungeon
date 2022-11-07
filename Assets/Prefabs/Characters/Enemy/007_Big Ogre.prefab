@@ -101,9 +101,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Cname: Big Ogre
   level: 7
-  damage: 10
-  maxHP: 36
-  currentHP: 36
+  damage: 38
+  maxHP: 185
+  currentHP: 185
   exp: 40
 --- !u!114 &-3677219201768155095
 MonoBehaviour:

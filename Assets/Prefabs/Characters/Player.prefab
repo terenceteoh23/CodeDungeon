@@ -142,13 +142,13 @@ MonoBehaviour:
   level: 1
   damage: 5
   maxHP: 100
-  currentHP: 96
-  exp: 9
+  currentHP: 100
+  exp: 0
   nextLevel: 15
   knowledge: 1
   isDead: 0
-  isStarting: 0
+  isStarting: 1
   changedScene: 1
   lastScene: dungeon_1
-  lastCordX: 1.5227418
+  lastCordX: 1.5827417
   lastCordY: -0.015629694

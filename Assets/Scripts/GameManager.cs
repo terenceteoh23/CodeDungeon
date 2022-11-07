@@ -74,9 +74,12 @@ public class GameManager : MonoBehaviour
     public void SetEXP()
     {
         int current = player.GetEXP();
-        if (current > xpTable[player.level])
+        if(player.level < 10)
         {
-            LevelUp();
+            if (current >= xpTable[player.level])
+            {
+                LevelUp();
+            }
         }
     }
 
@@ -118,12 +121,10 @@ public class GameManager : MonoBehaviour
         menuManager.ShowMenu();
         inventoryManager.DrawInventory(inventory.GetInventory());
         menuManager.SetPlayerInfo(player , xpTable);
-        playerUnit.GetComponent<PlayerMovement>().enabled = false;
     }
     public void HideMenu()
     {
         menuManager.HideMenu();
-        playerUnit.GetComponent<PlayerMovement>().enabled = true;
     }
 
     //Destorying a gameobject

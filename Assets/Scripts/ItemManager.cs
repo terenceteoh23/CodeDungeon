@@ -11,7 +11,7 @@ public class ItemManager : MonoBehaviour
         switch (item.id)
         {
             case 0:
-                player.ChangeStats(0,0,0,20,0);
+                player.ChangeStats(0,0,0,100,0);
                 break;
 
             case 1:

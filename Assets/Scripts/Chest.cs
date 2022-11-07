@@ -3,9 +3,6 @@ using UnityEngine;
 public class Chest : Collectable
 {
     public Sprite emptyChest;
-    public int damage;
-    public int maxhp;
-    public int hp;
     public ItemData item;
 
     protected override void OnCollect()

@@ -101,9 +101,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Cname: Masked Orge
   level: 5
-  damage: 5
-  maxHP: 24
-  currentHP: 24
+  damage: 16
+  maxHP: 110
+  currentHP: 110
   exp: 20
 --- !u!114 &7045868439073295124
 MonoBehaviour:

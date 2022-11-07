@@ -101,9 +101,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Cname: Orge
   level: 5
-  damage: 5
-  maxHP: 24
-  currentHP: 24
+  damage: 16
+  maxHP: 105
+  currentHP: 105
   exp: 20
 --- !u!114 &3048261665602444893
 MonoBehaviour:

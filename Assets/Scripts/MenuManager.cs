@@ -19,12 +19,25 @@ public class MenuManager : MonoBehaviour
         hpSlider.value = player.currentHP;
         hpText.text = player.currentHP + "/" + player.maxHP;
 
-        expSlider.maxValue = index[player.level];
-        expSlider.minValue = index[player.level - 1];
-        expSlider.value = player.exp;
-        expText.text = (expSlider.maxValue - player.exp) + "to Next Level";
+        if(player.level < 10)
+        {
+            expSlider.maxValue = index[player.level];
+            expSlider.minValue = index[player.level - 1];
+            expSlider.value = player.exp;
+            expText.text = (expSlider.maxValue - player.exp) + " to Next Level";
 
-        levelText.text = "Level " + player.level + ":";
+            levelText.text = "Level " + player.level + ":";
+        }
+        else
+        {
+            expSlider.maxValue = 1;
+            expSlider.minValue = 0;
+            expSlider.value = 1;
+            expText.text = "MAX LEVEL";
+
+            levelText.text = "Level " + player.level + ":";
+        }
+       
     }
 
     public void ShowMenu()

@@ -22,7 +22,7 @@ public class PlayerMovement : MonoBehaviour
 
         //Reset the move delta
         moveDelta = new Vector3(x, y, 0);
-
+            
         //swap sprite direction
         if (moveDelta.x > 0)
         {

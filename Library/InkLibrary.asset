@@ -29,7 +29,7 @@ MonoBehaviour:
   - compileAutomatically: 0
     inkAsset: {fileID: 102900000, guid: 75e1503ab939ea940a24734981a45293, type: 3}
     jsonAssetDirectory: {fileID: 0}
-    jsonAsset: {fileID: 4900000, guid: 4b2cbb92ef0f5e24a80279139d5a25b9, type: 3}
+    jsonAsset: {fileID: 4900000, guid: be8fe17abe1afd54398e521f62ae42b8, type: 3}
     unhandledCompileErrors: []
     errors: []
     warnings: []

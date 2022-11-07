@@ -101,9 +101,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Cname: Cultist
   level: 7
-  damage: 12
-  maxHP: 12
-  currentHP: 12
+  damage: 35
+  maxHP: 130
+  currentHP: 130
   exp: 30
 --- !u!114 &2714824842010948429
 MonoBehaviour:

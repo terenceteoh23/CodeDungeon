@@ -21,8 +21,8 @@ public class PuzzleMCQRepository : MonoBehaviour
         }
         else
         {
-            //puzzle = puzzles[Random.Range(0, puzzles.Count)];
-            puzzle = puzzles[6];
+            puzzle = puzzles[Random.Range(0, puzzles.Count)];
+            //puzzle = puzzles[8];
         }
 
         return puzzle;
@@ -103,16 +103,76 @@ public class PuzzleMCQRepository : MonoBehaviour
             "Correct!!"));
 
         puzzles.Add(new PuzzleMCQ(
-            "How many races in malaysia",
-            "3",
-            "1",
+            "num1 = 0;\n" +
+            "num2 = 50;\n" +
+            "num3 = 60;\n" +
+            "num1 = num2;\n" +
+            "cout << num1 + num3;\n\n" +
+            "What does the cout print?",
+            "110",
+            "60",
             "Wrong",
-            "2",
+            "50",
             "Wrong",
-            "3",
-            "Correct",
-            "4",
+            "0",
+            "Wrong",
+            "110",
+            "Correct!!"));
+
+        puzzles.Add(new PuzzleMCQ(
+            "for(int i=0;i<=5;i++)\n" +
+            "   num += 5;\n\n" +
+            "num += 10;\n" +
+            "cout << num;\n\n" +
+            "What does the cout print?",
+            "40",
+            "45",
+            "Wrong, check the amount of iterations in the loop",
+            "40",
+            "Correct!!",
+            "35",
+            "Wrong, check the amount of iterations in the loop",
+            "50",
+            "Wrong, check the amount of iterations in the loop"));
+
+        puzzles.Add(new PuzzleMCQ(
+            "string num1 = \"10\"\n" +
+            "string num2 = \"20\"\n" +
+            "cout << num2 + num1;\n\n" +
+            "What does the cout print?",
+            "2010",
+            "2010",
+            "Correct!!",
+            "30",
+            "Wrong, the variables are strings not int",
+            "1020",
+            "Wrong",
+            "Error",
             "Wrong"));
+
+        puzzles.Add(new PuzzleMCQ(
+            "What is the outcome of this equation\n9 / 2 + 3.4",
+            "7.4",
+            "7.9",
+            "Wrong, integer division works differently in programming",
+            "7.4",
+            "Correct!!",
+            "1",
+            "Wrong, the order of precedence is incorrect",
+            "10",
+            "Wrong"));
+
+        puzzles.Add(new PuzzleMCQ(
+            "Which symbol equates to is equal",
+            "==",
+            ">=",
+            "Wrong, This symbol equates to larger than or equal",
+            "==",
+            "Correct!!",
+            "=>",
+            "Wrong, This symbol is ordered incorrectly",
+            ">",
+            "Wrong, This symbol equates to larger than"));
 
 
 

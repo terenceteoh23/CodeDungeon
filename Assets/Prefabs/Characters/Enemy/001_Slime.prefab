@@ -101,7 +101,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Cname: Slime
   level: 1
-  damage: 3
+  damage: 10
   maxHP: 12
   currentHP: 12
   exp: 6

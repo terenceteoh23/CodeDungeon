@@ -22,8 +22,15 @@ public class CharacterInfo : MonoBehaviour
     
     public bool TakeDamage(int dmg)
     {
-        currentHP -= dmg;
-
+        if(dmg > currentHP)
+        {
+            currentHP = 0;
+        }
+        else
+        {
+            currentHP -= dmg;
+        }
+        
         if (currentHP <= 0)
             return true;
         else
