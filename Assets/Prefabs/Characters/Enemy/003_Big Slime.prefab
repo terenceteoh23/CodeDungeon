@@ -101,9 +101,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Cname: Big Slime
   level: 2
-  damage: 6
-  maxHP: 15
-  currentHP: 15
+  damage: 15
+  maxHP: 45
+  currentHP: 45
+  exp: 10
 --- !u!114 &1298802403882488689
 MonoBehaviour:
   m_ObjectHideFlags: 0

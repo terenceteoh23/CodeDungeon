@@ -15,15 +15,13 @@ public class BattleHUDManager : MonoBehaviour
     //secondary battle hud
     public GameObject SecondBattleHUD;
 
+    //inventory hud
+    public GameObject InventoryHUD;
+
     public void BattleSetup(Player p, CharacterInfo e)
     {
         playerHUD.SetHUD(p);
         enemyHUD.SetHUD(e);
-    }
-
-    public void UpdatePlayerHP(int hp)
-    {
-        playerHUD.SetHp(hp);
     }
 
     public void UpdateBattleDialog(string s)
@@ -39,6 +37,16 @@ public class BattleHUDManager : MonoBehaviour
     public void HideSecondBattleHUD()
     {
         SecondBattleHUD.SetActive(false);
+    }
+
+    public void ShowInventory()
+    {
+        InventoryHUD.SetActive(true);
+    }
+
+    public void HideInventory()
+    {
+        InventoryHUD.SetActive(false);
     }
 
 

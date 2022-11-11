@@ -101,9 +101,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Cname: Living Flesh
   level: 6
-  damage: 8
-  maxHP: 26
-  currentHP: 26
+  damage: 25
+  maxHP: 145
+  currentHP: 145
+  exp: 30
 --- !u!114 &8056125907811941101
 MonoBehaviour:
   m_ObjectHideFlags: 0

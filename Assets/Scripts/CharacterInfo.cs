@@ -8,11 +8,10 @@ public class CharacterInfo : MonoBehaviour
     //character stats
     public string Cname;
     public int level;
-
     public int damage;
-
     public int maxHP;
     public int currentHP;
+    public int exp;
     
     public int Attack()
     {
@@ -21,8 +20,15 @@ public class CharacterInfo : MonoBehaviour
     
     public bool TakeDamage(int dmg)
     {
-        currentHP -= dmg;
-
+        if(dmg > currentHP)
+        {
+            currentHP = 0;
+        }
+        else
+        {
+            currentHP -= dmg;
+        }
+        
         if (currentHP <= 0)
             return true;
         else

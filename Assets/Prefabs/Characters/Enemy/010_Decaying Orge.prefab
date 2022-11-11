@@ -101,9 +101,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Cname: Decaying Orge
   level: 9
-  damage: 16
-  maxHP: 48
-  currentHP: 48
+  damage: 40
+  maxHP: 270
+  currentHP: 270
+  exp: 60
 --- !u!114 &8350393023776509740
 MonoBehaviour:
   m_ObjectHideFlags: 0

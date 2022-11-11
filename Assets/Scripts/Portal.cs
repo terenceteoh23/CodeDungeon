@@ -18,6 +18,7 @@ public class Portal : Colliable
 
             EnvironmentManager.instance.DeleteState();
             EnvironmentManager.instance.DestoryObject();
+            GameManager.instance.SaveState();
             GameManager.instance.DestoryObject();
             UnityEngine.SceneManagement.SceneManager.LoadScene(sceneName);
         }
