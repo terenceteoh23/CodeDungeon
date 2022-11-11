@@ -8,11 +8,9 @@ public class EnvironmentManager : MonoBehaviour
     public static EnvironmentManager instance;
 
     //player references
-    //public GameObject playerUnit;
     public GameObject playerUnitField;
     public Player player;
     public List<Chest> Chests;
-    //public List<HealingFountain> Fountains;
     public List<EnemyUnit> Enemy;
 
     //map references
@@ -38,8 +36,6 @@ public class EnvironmentManager : MonoBehaviour
             instance = this;
             DontDestroyOnLoad(gameObject);
         }
-
-        //playerUnitField = Instantiate(playerUnit);
 
         if (player.isStarting)
         {

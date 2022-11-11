@@ -8,9 +8,7 @@ public class CharacterInfo : MonoBehaviour
     //character stats
     public string Cname;
     public int level;
-
     public int damage;
-
     public int maxHP;
     public int currentHP;
     public int exp;

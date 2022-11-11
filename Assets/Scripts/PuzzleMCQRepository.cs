@@ -22,7 +22,6 @@ public class PuzzleMCQRepository : MonoBehaviour
         else
         {
             puzzle = puzzles[Random.Range(0, puzzles.Count)];
-            //puzzle = puzzles[8];
         }
 
         return puzzle;

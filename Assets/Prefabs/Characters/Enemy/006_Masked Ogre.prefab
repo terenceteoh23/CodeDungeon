@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 7045868439073295124}
   - component: {fileID: 4818818718207297256}
   m_Layer: 0
-  m_Name: 006_Masked Orge
+  m_Name: 006_Masked Ogre
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -99,7 +99,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a0db0869b33a874b91e2ad60e989904, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Cname: Masked Orge
+  Cname: Masked Ogre
   level: 5
   damage: 16
   maxHP: 110

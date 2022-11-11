@@ -24,11 +24,6 @@ public class BattleHUDManager : MonoBehaviour
         enemyHUD.SetHUD(e);
     }
 
-    public void UpdatePlayerHP(int hp)
-    {
-        playerHUD.SetHp(hp);
-    }
-
     public void UpdateBattleDialog(string s)
     {
         battleDialog.text = s;

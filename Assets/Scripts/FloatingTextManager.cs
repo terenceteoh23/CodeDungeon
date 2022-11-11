@@ -8,7 +8,7 @@ public class FloatingTextManager : MonoBehaviour
     public GameObject textContanier;
     public GameObject textPrefab;
 
-    private  List<FloatingText> floatingTexts = new List<FloatingText>();
+    private List<FloatingText> floatingTexts = new List<FloatingText>();
 
     private void Update()
     {

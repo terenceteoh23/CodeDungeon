@@ -53,12 +53,10 @@ public class PuzzleManagerMCQ : MonoBehaviour
     {
         if(string.Equals(ans, CorrectAnswer))
         {
-            //CorrectIndicator.text = "Correct!";
             correct = true;
         }
         else
         {
-            //CorrectIndicator.text = "Wrong....";
             correct = false;
             
         }

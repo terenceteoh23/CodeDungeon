@@ -22,16 +22,6 @@ public class Player : CharacterInfo
     public float lastCordX;
     public float lastCordY;
 
-    public void UpdateStats(Player player)
-    {
-        this.level = player.level;
-        this.damage = player.damage;
-        this.maxHP = player.maxHP;
-        this.currentHP = player.currentHP;
-        this.knowledge = player.knowledge;
-        this.exp = player.exp;
-    }
-
     public void ChangeStats(int level, int damage, int maxHP, int currentHP, int knowledge)
     {
         this.level += level;
@@ -44,15 +34,6 @@ public class Player : CharacterInfo
         {
             this.currentHP = this.maxHP;
         }
-    }
-
-    public void SetStats(Player player)
-    {
-        this.level = player.level;
-        this.damage = player.damage;
-        this.maxHP = player.maxHP;
-        this.currentHP = player.currentHP;
-        this.knowledge = player.knowledge;
     }
 
     public void SaveLocation(string lastScene, float lastCordX, float lastCordY)
@@ -79,7 +60,6 @@ public class Player : CharacterInfo
     {
         this.exp += exp;
     }
-
     public int GetEXP()
     {
         return exp;
@@ -100,15 +80,9 @@ public class Player : CharacterInfo
             this.nextLevel = 0;
         }
     }
-
     public Vector3 GetLocation()
     {
         return new Vector3(lastCordX, lastCordY, 0);
-    }
-
-    public Player GetPlayer()
-    {
-        return this;
     }
 
     public string SaveData()

@@ -35,7 +35,6 @@ ScriptsOnlyBuild:
     - UnityEditor.U2D.Animation.BoneGizmo
     Unity.2D.IK.Editor.dll:
     - UnityEditor.U2D.IK.IKEditorManager
-    - UnityEditor.U2D.IK.IKGizmos
     Unity.2D.Tilemap.Editor.dll:
     - UnityEditor.Tilemaps.GridBrush
     - UnityEditor.Tilemaps.GridPaintPaletteClipboard
@@ -1237,7 +1236,7 @@ ScriptsOnlyBuild:
     className: ScrollRect
   - hash:
       serializedVersion: 2
-      Hash: 903f78e0cf8b872e55eae908765d3a22
+      Hash: e73dca9fa0c6a124f78f883b775d9cf2
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: GameManager
@@ -1373,4 +1372,4 @@ ScriptsOnlyBuild:
   - Assets/Scenes/dungeon_1.unity
   - Assets/Scenes/BattleScene.unity
   - Assets/Scenes/dungeon_2.unity
-  playerPath: C:/Users/tteoh/OneDrive/Desktop/College/Degree/Sem 5/CodeDungeon/CodeDungeon.exe
+  playerPath: C:/Unity Project/CodeDungeon/CodeDungeon.exe

@@ -32,10 +32,7 @@ public class GameManager : MonoBehaviour
     }
 
     //Resources
-    public List<Sprite> playerSprites;
-    public List<Sprite> weaponSprites;
-    public List<int> weaponPrices;
-    public List<int> xpTable = new List<int>() { 0, 15, 45, 90, 150, 220, 300, 410, 650, 850};
+    public List<int> xpTable = new List<int>();
 
     //References
     public GameObject playerUnit;
@@ -65,12 +62,13 @@ public class GameManager : MonoBehaviour
     {
         player.SetEXP(exp);
         int current = player.GetEXP();
-        if (current > xpTable[player.level])
+        if (current >= xpTable[player.level])
         {
             LevelUp();
         }
     }
 
+    //set the exp
     public void SetEXP()
     {
         int current = player.GetEXP();
@@ -83,6 +81,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    //level up the player
     public void LevelUp()
     {
         player.LevelUp(xpTable);
@@ -105,6 +104,7 @@ public class GameManager : MonoBehaviour
     {
         inventory.Add(item);
     }
+
     public void UseItem(InventorySlot slot)
     {
         ItemData item = slot.itemData;
@@ -113,7 +113,6 @@ public class GameManager : MonoBehaviour
         inventoryManager.DrawInventory(inventory.GetInventory());
         menuManager.SetPlayerInfo(player, xpTable);
     }
-
 
     //Show and Hide Menu
     public void ShowMenu()

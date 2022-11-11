@@ -38,7 +38,6 @@ public class BattleManager : MonoBehaviour
     //battle states
     public BattleState state;
 
-
     private void Start()
     {
         state = BattleState.START;
@@ -75,8 +74,6 @@ public class BattleManager : MonoBehaviour
         //change state to player turn
         state = BattleState.PLAYERTURN;
         PlayerTurn();
-
-        
     }
     private void PlayerTurn()
     {
@@ -112,7 +109,6 @@ public class BattleManager : MonoBehaviour
         //wait for 1 second
         yield return new WaitForSeconds(2f);
 
-        
         //check if player is dead
         if (isDead)
         {
@@ -147,7 +143,6 @@ public class BattleManager : MonoBehaviour
             double db_damage = Convert.ToDouble(damage);
             db_damage = db_damage * 1.25;
             damage = Convert.ToInt32(db_damage);
-
         }
 
         bool isDead = enemyUnit.TakeDamage(damage);
