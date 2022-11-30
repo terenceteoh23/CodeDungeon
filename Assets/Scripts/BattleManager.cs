@@ -174,6 +174,10 @@ public class BattleManager : MonoBehaviour
 
     public void OpenPuzzleAttack()
     {
+        //disable button
+        AttackButton.interactable = false;
+        ItemButton.interactable = false;
+
         if (state != BattleState.PLAYERTURN)
             return;
         else
@@ -208,6 +212,10 @@ public class BattleManager : MonoBehaviour
 
     public void OpenInventory()
     {
+        //disable button
+        AttackButton.interactable = false;
+        ItemButton.interactable = false;
+
         battleHUD.ShowInventory();
         inventoryManager.DrawInventory(inventory.GetInventory());
     }
@@ -286,6 +294,13 @@ public class BattleManager : MonoBehaviour
             EnvironmentManager.instance.DeleteState();
         }
             
+    }
+
+    public void EnableAll()
+    {
+        //disable button
+        AttackButton.interactable = true;
+        ItemButton.interactable = true;
     }
 }
 
